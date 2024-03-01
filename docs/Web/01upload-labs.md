@@ -18,16 +18,16 @@
 - 禁用js绕过验证
 - bp抓包，修改文件名绕过
 
-![源码](/medias/upload01-10/1-01.jpg)
+![源码](../medias/upload01-10/1-01.jpg)
 
 可以使用禁用javascript脚本的插件或者浏览器开发者工具里自带功能，我使用扩展插件禁用js
 
-![禁用js](/medias/upload01-10/1-02.jpg)
+![禁用js](../medias/upload01-10/1-02.jpg)
 
-![复制图片路径](/medias/upload01-10/1-04.jpg)
+![复制图片路径](../medias/upload01-10/1-04.jpg)
 禁用js，成功上传文件，右键复制图片上传路径，访问文件，php语句成功解析(后续得到的此php语句解析成功的图片省略)
 
-![成功解析](/medias/upload01-10/1-03.jpg)
+![成功解析](../medias/upload01-10/1-03.jpg)
 
 通过bp修改文件名的方法,将带有php语句的图片类型文件名修改为filename.php，否则图片文件是不能正确解析的
 
@@ -49,7 +49,7 @@ Content-Type: application/octet-stream
 
 bp抓包，把要上传的php文件MIME类型修改为允许的类型上传
 
-![2](/medias/upload01-10/2-01.png)                                                                  
+![2](../medias/upload01-10/2-01.png) 
 
 右键复制'图片'地址，访问
 
@@ -59,7 +59,7 @@ bp抓包，把要上传的php文件MIME类型修改为允许的类型上传
 
 没有过滤php2,php3,php5,phtml等扩展名的php文件，成功上传后，右键复制'图片'地址，访问
 
-![php3](/medias/upload01-10/3-01.jpg)
+![php3](../medias/upload01-10/3-01.jpg)
 
 如果不能解析，查看apache配置文件里是否有这些扩展名,没有的话，查下资料添加进去
 
@@ -107,7 +107,7 @@ SetHandler application/x-httpd-php
 
 源码中没有对扩展名大小写做要求，使用bp抓包修改扩展名大小写绕过,只要不在源码限制里都行
 
-![5-01](/medias/upload01-10/5-01.png)
+![5-01](../medias/upload01-10/5-01.png)
 
 上传后，复制图片地址，访问
 
@@ -117,7 +117,7 @@ SetHandler application/x-httpd-php
 
 查看源码，没有进行首位去空的操作
 
-![06](/medias/upload01-10/6-01.png)
+![06](../medias/upload01-10/6-01.png)
 
 使用bp抓包，在文件名末尾添加空格，成功上传，复制地址访问
 
@@ -127,7 +127,7 @@ SetHandler application/x-httpd-php
 
 查看源码，没有去除文件名末尾的点
 
-![07](/medias/upload01-10/7-01.png)
+![07](../medias/upload01-10/7-01.png)
 
 使用bp抓包，在文件名末尾添加点，成功上传，复制地址访问
 
@@ -137,7 +137,7 @@ SetHandler application/x-httpd-php
 
 查看源码，没有去除末尾的::$data
 
-![08](/medias/upload01-10/8-01.png)
+![08](../medias/upload01-10/8-01.png)
 
 使用bp抓包，在文件名末尾添加::$data，成功上传，复制地址访问
 
@@ -149,7 +149,7 @@ SetHandler application/x-httpd-php
 
 这样它先去除末尾的点，将这个点后的内容(什么都没有)转化为小写，再去除::$data作用，最后首尾去空，得到了1.php.
 
-![9-01](/medias/upload01-10/9-01.png)
+![9-01](../medias/upload01-10/9-01.png)
 
 其中，末尾的点会被系统忽略
 
@@ -161,7 +161,7 @@ SetHandler application/x-httpd-php
 
 看源码，定义了很多格式的扩展名，如果上传的文件中有这些扩展名，过滤掉它们
 
-![10-01](/medias/upload01-10/10-01.png)
+![10-01](../medias/upload01-10/10-01.png)
 
 
 所有可以通过双写扩展名，并不是规则的双写，将一个php中插入php，避免直接双写都被过滤掉，双写得到一个例如pphphp，删除第一个php时，剩下的p和hp组成php扩展名
