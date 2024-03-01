@@ -20,6 +20,7 @@
 
 ![源码](../medias/upload01-10/1-01.jpg)
 
+
 可以使用禁用javascript脚本的插件或者浏览器开发者工具里自带功能，我使用扩展插件禁用js
 
 ![禁用js](../medias/upload01-10/1-02.jpg)
