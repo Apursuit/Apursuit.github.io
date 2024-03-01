@@ -9,13 +9,22 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">loading...</div>
   <script>
     window.$docsify = {
-      name: '',
+      name: "<span style='color:red'>Doscify中文文档</span>",
       repo: '',
       loadSidebar: true,
-      coverpage: true
+      subMaxLevel: 2,
+      coverpage: true,
+
+      //    YYYY-年 yy-短年 MM-月 DD-日 HH-时 mm-分 ss-秒 fff-微秒
+      formatUpdated: "更新于{YYYY}({YY})/{MM}/{DD} {HH}:{mm}:{ss}:{fff}",
+      formatUpdated: function(time) {
+      // ...
+      return time;
+      },
+      
     }
   </script>
   <!-- Docsify v4 -->
