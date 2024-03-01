@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>给我一首歌的时间...</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -17,14 +17,16 @@
       loadSidebar: true,
       subMaxLevel: 2,
       coverpage: true,
+      
 
+      // 添加文章更新时间
       //    YYYY-年 yy-短年 MM-月 DD-日 HH-时 mm-分 ss-秒 fff-微秒
       formatUpdated: "更新于{YYYY}({YY})/{MM}/{DD} {HH}:{mm}:{ss}:{fff}",
       formatUpdated: function(time) {
       // ...
       return time;
       },
-      
+
     }
   </script>
   <!-- Docsify v4 -->
