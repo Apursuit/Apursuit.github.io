@@ -8,17 +8,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <style>
-    img{display: block;
+    img{
+    display: block;
     margin: 0 auto;
     }
+    .markdown-section code,
+    .markdown-section pre,
+    .markdown-section pre > code {
+    color: #eee; /* default color for elements not styled by prism theme */
+    background-color: #353544; /* dark background, because vue.css modify it */
+  }
+
+/* because the bgcolor change in previous css rule. font-color when using inline code tag */
+    .markdown-section code {
+    color: #eccb84; 
+    }
   </style>
+
+<!-- 代码高亮主题 -->
+<link rel="stylesheet" href="https://unpkg.com/browse/prismjs@0.0.1/themes/prism-tomorrow.css">
+
+
 </head>
 <body>
   <div id="app">loading...</div>
   <script>
     window.$docsify = {
-      name: "<span style='color:red'>Ajay's Blog</span>",
-      repo: '',
+      name: "<span style='color:skyblue'>Wonderful</span>",
+      repo: 'https://apursuit.github.io/',
       loadSidebar: true,
       coverpage: true,
       
@@ -31,9 +48,21 @@
       return time;
       },
 
+      copyCode: {
+      buttonText : 'copy',
+      errorText  : 'Error',
+      successText: 'Copied'
+      },
+
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <!-- 添加代码样式 -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-php.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-docker.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code"></script>
 </body>
 </html>

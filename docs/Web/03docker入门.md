@@ -7,8 +7,8 @@
 
 先切换到root用户，一般用户每次执行docker命令都需要sudo不方便(我忘记root用户密码了就这样操作了…)
 
-```
-docker search upload-labs              在dockerhub搜索upload-labs镜像
+```docker
+docker search upload-labs             // 在dockerhub搜索upload-labs镜像
 ```
 
 ![](../medias/docker_1/1.png)
@@ -16,7 +16,7 @@ docker search upload-labs              在dockerhub搜索upload-labs镜像
 我装过**c0ny1**的镜像了，这次下面随便找一个
 pull拉取镜像文件
 
-```
+```docker
 docker pull cuer/upload-labs
 ```
 
@@ -24,7 +24,7 @@ docker pull cuer/upload-labs
 
 查看当前仓库中镜像
 
-```
+```docker
 docker images
 ```
 
@@ -33,7 +33,7 @@ docker images
 运行镜像
 -p 端口，80:80第一个80为本地端口，第二个80为镜像端口
 
-```
+```docker
 docker run -d -p 80:80  cuer/upload-labs
 ```
 
@@ -42,7 +42,7 @@ docker run -d -p 80:80  cuer/upload-labs
 显示端口已被占用
 查看正在运行的容器
 
-```
+```docker
 docker ps
 ```
 
@@ -50,7 +50,7 @@ docker ps
 
 记录下当前占用80端口的容器id，记录3-4位即可f1b3，正在运行的容器需要使用**-f**参数
 
-```
+```docker
 docker rm -f f1b3
 ```
 
@@ -58,7 +58,7 @@ docker rm -f f1b3
 
 再试一次开启upload-labs镜像
 
-```
+```docker
 docker run -d -p 80:80 cuer/upload-labs
 ```
 
@@ -67,7 +67,7 @@ docker run -d -p 80:80 cuer/upload-labs
 开启成功，在浏览器可以使用localhost打开
 通过上面开启服务时的镜像id，现在进到镜像系统中
 
-```
+```docker
 docker exec -it  da88 /bin/bash
 ```
 
@@ -77,7 +77,7 @@ docker exec -it  da88 /bin/bash
 
 最后，如果开启upload-labs镜像执行两条命令
 
-```
+```shell
 mkdir upload             创建upload文件夹
 chown  www-data:www-data upload     更改文件夹权限，使能够上传文件
 ```

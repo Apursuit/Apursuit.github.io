@@ -1,3 +1,3 @@
-# Hello World!
+# Hello Ajay!
 
-> 迫不及待地使用这个主题
+> **请保持对CTF的热爱**
