@@ -20,8 +20,3 @@
 - dG            从当前行删到最后一行
 - !             vim中执行外部指令
 ```
-
-
-```python
-print("helloworld")
-```
