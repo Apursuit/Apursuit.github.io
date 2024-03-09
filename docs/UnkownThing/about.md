@@ -2,7 +2,7 @@
 
 选择她的原因是简单，干净
 
-如果你也感兴趣，可以参考以下文章搭建
+如果你同样感兴趣，可以参考以下文章搭建
 
 - 参考
   - [Docsify官方帮助文档](https://jingping-ye.github.io/docsify-docs-zh/#/)

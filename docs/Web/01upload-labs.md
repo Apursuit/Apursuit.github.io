@@ -1,3 +1,4 @@
+# upload-labs pass1-10
 
 **在以下做题过程中，使用phpinfo()代替了一句话木马**
 
@@ -40,8 +41,6 @@ Content-Type: application/octet-stream
 <?php phpinfo();?>
 ```
 
-
-
 ## pass-02  后端MIME验证
 
 查看源码，服务器端会检测下文件类型
@@ -54,8 +53,6 @@ bp抓包，把要上传的php文件MIME类型修改为允许的类型上传
 
 右键复制'图片'地址，访问
 
-
-
 ## pass-03
 
 没有过滤php2,php3,php5,phtml等扩展名的php文件，成功上传后，右键复制'图片'地址，访问
@@ -63,8 +60,6 @@ bp抓包，把要上传的php文件MIME类型修改为允许的类型上传
 ![php3](../medias/upload01-10/3-01.jpg)
 
 如果不能解析，查看apache配置文件里是否有这些扩展名,没有的话，查下资料添加进去
-
-
 
 ## pass-04
 
@@ -79,10 +74,6 @@ SetHandler application/x-httpd-php
 ```
 
 再上传写有php语句的图片文件，成功上传后，访问文件能够解析
-
-
-
-
 
 **在pass05-10题目中，会规律的出现一些漏洞方法，可以在bp中修改绕过验证，他们利用了windows中的漏洞，如果使用linux平台环境，似乎不能正确解析，**
 
@@ -102,8 +93,6 @@ SetHandler application/x-httpd-php
 
    windows系统中，在文件名中加入::$data可以避免检测扩展名
 
-    
-
 ## pass-05
 
 源码中没有对扩展名大小写做要求，使用bp抓包修改扩展名大小写绕过,只要不在源码限制里都行
@@ -111,8 +100,6 @@ SetHandler application/x-httpd-php
 ![5-01](../medias/upload01-10/5-01.png)
 
 上传后，复制图片地址，访问
-
-
 
 ## pass-06
 
@@ -122,8 +109,6 @@ SetHandler application/x-httpd-php
 
 使用bp抓包，在文件名末尾添加空格，成功上传，复制地址访问
 
-
-
 ## pass-07
 
 查看源码，没有去除文件名末尾的点
@@ -131,8 +116,6 @@ SetHandler application/x-httpd-php
 ![07](../medias/upload01-10/7-01.png)
 
 使用bp抓包，在文件名末尾添加点，成功上传，复制地址访问
-
-
 
 ## pass-08
 
