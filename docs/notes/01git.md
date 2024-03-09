@@ -1,6 +1,8 @@
 **这是一个基于Github pages + docsify的主题笔记(博客)，在搭建过程遇到了一些git的用法,具体由GPT生成，暂时记下**
-```
 
+!> 注意：当多人/多台设备维护一个项目时，项目内个人环境不同，使用.gitignore文件让git忽略这些内容，避免导致其他设备拉取时，运行错误或不必要的问题
+
+```git
 git clone https://github.com/username/repository.git                                                      
                                 使用http协议克隆仓库
 git clone git clone git@github.com:username/repository.git
@@ -22,6 +24,8 @@ git add .                       添加当前目录下的所有新文件和修改
 git add -u                      更新已跟踪的文件，包括修改过的文件和删除的文件，但不会添加新文件
 
 git status                      检查当前状态，确认哪些更改将被提交
+
+git rm -r --cached dir/         删除暂存区某目录下内容
 
 git commit -m "words"           用于将暂存区（stage）中的更改记录到仓库历史
 
