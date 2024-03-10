@@ -19,7 +19,7 @@
   - [丢弃信息](Linux/05丢弃信息.md)
   - [反斜杠](Linux/04反斜杠.md)
   - [nl查看源码](Linux/03nl.md)
-  - [echo&printf与文件](Linux/02echo_printf与文件.md)
+  - [echo&printf写入文件](Linux/02echo_printf与文件.md)
   - [Vim入门](Linux/01vim入门.md)
 
 - **入门合集**
