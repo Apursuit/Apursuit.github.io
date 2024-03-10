@@ -1,4 +1,4 @@
-# ctfshow web40 命令执行_php函数
+# ctfshow web40 命令执行_php变量函数
 
 !> 使用php函数让服务器接收并执行自己的命令，获取权限  
 
@@ -46,18 +46,6 @@ show_source()       # 查看源码
 
 **payload：url/?c=show_source(next(array_reverse(scandir(pos(localeconv())))));**
 
+船新玩法**var_dump**函数，待解锁！  
 
-
-> system($c." >/dev/null 2>&1");      # system执行$c的终端命令  
-**">/dev/null 2>&1"** 加上这句后，执行命令但无回显
-
-```bash
-; //分号
-| //只执行后面那条命令
-|| //只执行前面那条命令
-& //两条命令都会执行
-&& //两条命令都会执行
-```
-
-其中在使用GET传值时，&和&&都需要进行url编码  
-使用GET给$c传值时，加入这些**用于控制终端命令执行流程**的符号，从而绕过linux的垃圾站
+**类似函数var_export**
