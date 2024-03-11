@@ -78,9 +78,10 @@
     owner: "Apursuit",
     admin: ["Apursuit"],
     // facebook-like distraction free mode
-    id: location.pathname,      // Ensure uniqueness and length less than 50
+    title: `Document comment ${location.hash.match(/#(.*?)([?]|$)/)[1]}`,
+    id: location.hash.match(/#(.*?)([?]|$)/)[1],  // 存放评论的仓库
     distractionFreeMode: false,
-    title: decodeURI(document.title),
+    
   });
  // Listen for changes in hash in the URL. If an MD file is found to have changed,
     // refresh the page to solve the problem of using a single digital comment issue for the entire website.
