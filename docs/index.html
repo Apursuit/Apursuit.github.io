@@ -65,7 +65,29 @@
 
   <!-- 放大图片 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <!-- Gitalk -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css" />
 
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+  <script>
+  const gitalk = new Gitalk({
+    clientID: "b25c8e251f347504c2e5",
+    clientSecret: "400dc18afa3ea07a801dabc9dab78f003f056e7a",
+    repo: "comments",
+    owner: "Apursuit",
+    admin: ["Github repo collaborators, only these guys can initialize github issues"],
+    // facebook-like distraction free mode
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false,
+    title: decodeURI(document.title),
+  });
+  window.onhashchange = function(event){
+    if(event.newURL.split('?')[0] !== event.oldURL.split('?')[0]){
+      location.reload()
+    }
+  }
+  </script>
 </script>
 </body>
 </html>
