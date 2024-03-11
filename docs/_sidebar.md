@@ -5,6 +5,8 @@
 - [命令执行_php文件函数](Web/07php文件函数.md)
 
 - **Web**
+  - [跨时代](Web/09PHP-FFI.md)
+  - [代码劫持](Web/08endFile.md)
   - [命令执行_php文件函数](Web/07php文件函数.md)
   - [命令执行_php变量函数](Web/06php变量函数.md)
   - [include_php伪协议](Web/05inlcude_php伪协议.md)

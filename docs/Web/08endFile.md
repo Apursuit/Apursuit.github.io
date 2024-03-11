@@ -1,0 +1,25 @@
+# PHP-冲出缓存，结束程序
+```php
+if(isset($_POST['c'])){
+        $c= $_POST['c'];
+        eval($c);
+        $s = ob_get_contents();         
+        ob_end_clean();
+        echo preg_replace("/[0-9]|[a-z]/i","?",$s);
+}else{
+    highlight_file(__FILE__);
+}
+```
+
+审计代码，这段代码先执行传入的$C，用$S临时保存命令执行的结果，再清理缓存，打印正则表达式用?替换后$s的输出内容，简单说，他用?替换了所有数字和字母，然后再展现给你
+
+!> 要绕过/不执行后面代码可以通过  
+```php
+ob_flush();         # 让**eval($C)**的内容提前送出输出缓存区
+```
+
+```php
+die();              # 提前结束程序，不执行后面命令，避免被劫持
+exit();             # 提前结束程序，不执行后面命令，避免被劫持
+```
+die("words"),exit("words"),可选参数words，结束时打印一句话

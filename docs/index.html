@@ -78,7 +78,7 @@
     owner: "Apursuit",
     admin: ["Apursuit"],
     // facebook-like distraction free mode
-    title: `Document comment ${location.hash.match(/#(.*?)([?]|$)/)[1]}`,
+    title: decodeURL(`Document comment ${location.hash.match(/#(.*?)([?]|$)/)[1]}`),
     id: location.hash.match(/#(.*?)([?]|$)/)[1],  // 存放评论的仓库
     distractionFreeMode: false,
     

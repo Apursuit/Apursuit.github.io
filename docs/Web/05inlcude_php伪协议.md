@@ -2,11 +2,13 @@
 
 ### 1.1 文件包含
 
-> 在文件包含时使用php伪协议，常见的文件包含函数如下1 include **2 require** 3 include_once 4 require_once 5 highlight_file 6 show_source **7 file** **8 readfile** 9 file_get_contents 10 file_put_contents 11 fopen  将一个文件的内容包含到另一个文件  
+!> include('1.txt') 将尝试包含并执行 1.txt 文件中的PHP代码。如果 1.txt 中包含的是PHP代码，则该代码将被执行。如果文件中包含的是普通文本，那么这段文本将被输出到屏幕上，因为 include() 在处理纯文本文件时会直接输出文件内容。
 
 ### 1.2 伪协议
 
-> PHP 伪协议是一种特殊的 PHP 特性，允许在 PHP 中通过类似 URL 的方式来访问各种资源，如文件、数据流等
+> 在文件包含时使用php伪协议，常见的文件包含函数如下1 include **2 require** 3 include_once 4 require_once 5 highlight_file 6 show_source **7 file** **8 readfile** 9 file_get_contents 10 file_put_contents 11 fopen  将一个文件的内容包含到另一个文件  
+#### 常用php伪协议
+> PHP 伪协议是一种特殊的 PHP 特性，允许在 PHP 中通过类似 URL 的方式来访问各种资源，如文件、数据流等 
 > - file://: 允许 PHP 访问本地文件系统中的文件。例如，file:///path/to/file.txt 可以用于读取文件系统中的文本文件
 > - http:// 或 https://: 允许 PHP 通过 HTTP 或 HTTPS 协议访问远程服务器上的资源。例如，http://example.com/data.txt 可用于获取远程服务器上的数据。
 > - ftp://: 允许 PHP 通过 FTP 协议访问远程 FTP 服务器上的文件。例如，ftp://username:password@example.com/file.txt 可用于通过 FTP 获取文件。
