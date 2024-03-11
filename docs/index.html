@@ -82,7 +82,13 @@
     distractionFreeMode: false,
     title: decodeURI(document.title),
   });
-
+ // Listen for changes in hash in the URL. If an MD file is found to have changed,
+    // refresh the page to solve the problem of using a single digital comment issue for the entire website.
+    window.onhashchange = function (event) {
+        if (event.newURL.split('?')[0] !== event.oldURL.split('?')[0]) {
+            location.reload()
+        }
+    }
   </script>
 </script>
 </body>
