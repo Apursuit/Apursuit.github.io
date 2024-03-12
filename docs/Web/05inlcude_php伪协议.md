@@ -9,11 +9,12 @@
 > 在文件包含时使用php伪协议，常见的文件包含函数如下1 include **2 require** 3 include_once 4 require_once 5 highlight_file 6 show_source **7 file** **8 readfile** 9 file_get_contents 10 file_put_contents 11 fopen  将一个文件的内容包含到另一个文件  
 #### 常用php伪协议
 > PHP 伪协议是一种特殊的 PHP 特性，允许在 PHP 中通过类似 URL 的方式来访问各种资源，如文件、数据流等 
-> - file://: 允许 PHP 访问本地文件系统中的文件。例如，file:///path/to/file.txt 可以用于读取文件系统中的文本文件
-> - http:// 或 https://: 允许 PHP 通过 HTTP 或 HTTPS 协议访问远程服务器上的资源。例如，http://example.com/data.txt 可用于获取远程服务器上的数据。
-> - ftp://: 允许 PHP 通过 FTP 协议访问远程 FTP 服务器上的文件。例如，ftp://username:password@example.com/file.txt 可用于通过 FTP 获取文件。
+> - file://: 允许 PHP 访问本地文件系统中的文件
+> - http:// 或 https://: 允许 PHP 通过 HTTP 或 HTTPS 协议访问远程服务器上的资源
+> - ftp://: 允许 PHP 通过 FTP 协议访问远程 FTP 服务器上的文件。
 > - php://: 提供了访问各种输入输出流的方式。例如，php://stdin、php://stdout、php://stderr 可用于标准输入、输出和错误输出。
 > - data://: 允许在 PHP 中直接使用数据 URI，将数据嵌入到 URL 中。例如，data:text/plain;base64,SGVsbG8gV29ybGQ= 可用于直接指定文本数据。
+
 
 payload1：**url?c=include$_GET[1];&1=php://filter/convert.base64-encode/resource=flag.php**
 
@@ -44,7 +45,11 @@ url?c=include$_GET[1];&1=data:text/plain;base64,PD9waHAgcGhwaW5mbygpOz8%2b
 > 可以访问请求的原始数据的只读流，将post请求的数据当作php代码执行  
 
 payload3：**url?c=include$_GET[1];&1=php://input**
-使用post传入命令，命令执行
+
+POST:  
+```php
+echo'hello'
+```
 
 
 ## 2.1 include+日志注入
