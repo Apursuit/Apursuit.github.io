@@ -133,5 +133,6 @@ docker commit fb204 ajay
 ![15](../medias/docker_0/15.png)
 
 现在再次访问测试可以发现参数已经完成修改！
+![14](../medias/docker_0/14.png)
 
 **下课!**
