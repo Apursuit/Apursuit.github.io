@@ -1,5 +1,5 @@
 - **First**
-  - [快速阅读](#)
+  - [快速阅读](README.md)
 
 - **最新**
   - [Docker-CTF镜像](notes/04docker_0.md)
