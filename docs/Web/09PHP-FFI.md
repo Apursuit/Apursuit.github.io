@@ -1,4 +1,4 @@
-# PHP使用C函数
+# PHP扩展C函数
 
 !> PHP Foreign Function Interface（FFI）是PHP 7.4中引入的一个新特性，它允许在无需编写扩展的情况下，直接在PHP脚本中调用C语言库。FFI在PHP中默认是禁用的
 

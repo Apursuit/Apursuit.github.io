@@ -1,4 +1,4 @@
-## php文件函数
+# php文件函数
 
 !> highlight_file("filename") 是一个 PHP 函数，用于在浏览器中高亮显示指定文件的源代码
 

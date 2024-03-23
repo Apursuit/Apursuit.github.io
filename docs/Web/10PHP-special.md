@@ -16,8 +16,8 @@ eg.
 a123 == 0  
 GET传入的数据都作为字符串
 
-
 ## 3.intval()函数
+
 intval($val,$base)，var是传入的变量参数，base表示这个参数的进制  
 intval(4476,0)，0表示根据var开始的数字决定使用的进制，0x十六进制，0八进制，1-9十进制  
 eg.intval(0x117c,0)===4476  
@@ -30,6 +30,7 @@ a[]=1,b[]=2，md5(),sha1()作用后，返回null   null=null
 ## 一些操作函数
 
 ### 1.parse_str($v1,$v2) 
+
 > parse_str() 函数用于将查询字符串解析到变量中。它将查询字符串解析为变量，并将变量设置为当前符号表的条目。其中，$v1 是要解析的查询字符串，$v2 是用来存储解析结果的数组。
 
 如果 $v1 是 'name=binjie&age=25'，那么 parse_str($v1, $v2) 执行后，$v2 将会包含键值对 ['name' => 'binjie', 'age' => '25']。
@@ -39,7 +40,9 @@ $query = "name=Ajay";
 parse_str($query, $result);
 print_r($result);
 ```
+
 结果
+
 ```php
 Array
 (
@@ -51,9 +54,10 @@ Array
 
 发现在$v1=1时，返回了一个空数组，var_dump($v2)=array[]，即$v2=null
 
-
 ### 2.strrev(str1)
-strrev 是 PHP 中的一个内置函数，用于反转字符串  
+
+strrev 是 PHP 中的一个内置函数，用于反转字符串
+
 ```php
 $str = "Hello, World!";
 $reversed = strrev($str);
