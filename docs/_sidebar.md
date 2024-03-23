@@ -32,6 +32,7 @@
   - [Git入门](notes/01git.md)
 
 - **杂谈**
+  - [发癫3.23](UnkownThing/02_3_23.md)
   - [发癫3.16](UnkownThing/01_3_16.md)
   
 - [**关于**](UnkownThing/about.md)
