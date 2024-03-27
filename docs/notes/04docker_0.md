@@ -4,7 +4,7 @@
 
 我要打的靶机需要使用到include+php伪协议，以我的过程为例了  
 
-!> 中间部分按你的需求选做
+!> 中间php.ini配置部分按需求选做
 
 ## 1.拉取镜像
 
@@ -39,8 +39,10 @@ docker pull php:8.2.17-apache
 
 在Dockerhub中PHP官方文档下找到配置相关指令
 
+找到**配置文件位置**
+
 ```php
-$php_INI_DIR/php.ini      # 配置文件位置
+$php_INI_DIR/php.ini      
 ```
 
 ![4](../medias/docker_0/4.png)
@@ -135,4 +137,15 @@ docker commit fb204 ajay
 现在再次访问测试可以发现参数已经完成修改！
 ![14](../medias/docker_0/14.png)
 
-**下课!**
+## 9.将镜像推送到dockerhub仓库
+
+登录dockerhub账户
+
+```docker
+docker login
+```
+
+推送
+```docker
+docker push 仓库名/镜像名
+```
