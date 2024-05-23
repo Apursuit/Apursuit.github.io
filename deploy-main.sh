@@ -3,21 +3,24 @@
 # 确保脚本抛出遇到的错误
 set -e
 
-# 设置变量
+push_addr=git@github.com:Apursuit/Apursuit.github.io.git # git提交地址，也可以手动设置，比如：push_addr=git@github.com:xugaoyi/vuepress-theme-vdoing.git
+commit_info='update main branch'
+dist_path=./ # 打包生成的文件夹路径
 push_branch=main # 推送的分支
 
-echo "开始部署脚本..."
+# 创建临时文件夹并复制项目内容
+temp_dir=$(mktemp -d)
+cp -r . "$temp_dir"
 
-# 添加所有文件并提交
-echo "添加所有文件并提交"
-git add .
-git commit -m "update main branch"
+# 进入生成的文件夹
+cd "$dist_path"
 
-# 临时设置提交地址
-push_addr="git@github.com:Apursuit/Apursuit.github.io.git" # 临时 git 提交地址
+git init
+git add -A
+git commit -m "$commit_info"
+git push -f "$push_addr" HEAD:"$push_branch"
 
-# 强制推送到远程仓库的指定分支
-echo "推送到远程仓库"
-git push -f $push_addr $push_branch
+cd -
 
-echo "部署完成"
+# 删除临时文件夹
+rm -rf "$temp_dir"
