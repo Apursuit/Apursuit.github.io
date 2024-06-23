@@ -15,6 +15,10 @@ npm run build
 # 进入生成的文件夹
 cd $dist_path
 
+# 创建 robots.txt 文件
+echo "User-agent: *" > robots.txt
+echo "Allow: /" >> robots.txt
+
 git init
 git add -A
 git commit -m "deploy, $commit_info"

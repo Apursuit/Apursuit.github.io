@@ -15,6 +15,9 @@ cp -r . "$temp_dir"
 # 进入生成的文件夹
 cd "$dist_path"
 
+echo "User-agent: *" > robots.txt  # 创建rebots.txt
+echo "Allow: /" >> robots.txt
+
 git init
 git add -A
 git commit -m "$commit_info"
