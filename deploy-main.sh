@@ -4,7 +4,7 @@
 set -e
 
 push_addr=git@github.com:Apursuit/Apursuit.github.io.git # git提交地址，也可以手动设置，比如：push_addr=git@github.com:xugaoyi/vuepress-theme-vdoing.git
-commit_info='upload main dir'
+commit_info='commit'
 dist_path=./ # 打包生成的文件夹路径
 push_branch=master # 推送的分支
 
