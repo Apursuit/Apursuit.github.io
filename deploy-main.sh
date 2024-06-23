@@ -4,9 +4,9 @@
 set -e
 
 push_addr=git@github.com:Apursuit/Apursuit.github.io.git # git提交地址，也可以手动设置，比如：push_addr=git@github.com:xugaoyi/vuepress-theme-vdoing.git
-commit_info='update main branch'
+commit_info='upload main dir'
 dist_path=./ # 打包生成的文件夹路径
-push_branch=main # 推送的分支
+push_branch=master # 推送的分支
 
 # 创建临时文件夹并复制项目内容
 temp_dir=$(mktemp -d)

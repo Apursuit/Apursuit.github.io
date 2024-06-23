@@ -19,7 +19,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     '/': {
       lang: 'zh-CN',
       title: "ajay",
-      description: 'ctf|web|php|摸鱼|甩锅|缝合怪',
+      description: 'ctf|web|摸鱼|甩锅|缝合怪',
     }
   },
   // base: '/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
@@ -32,13 +32,16 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       
       
       {
-        text: '索引',
+        // text: '索引',
+        // link: '/archives/',
+        // items: [
+        //   { text: '分类', link: '/categories/' },
+        //   { text: '标签', link: '/tags/' },
+        //   { text: '归档', link: '/archives/' },
+        // ],
+
+        text: '归档',
         link: '/archives/',
-        items: [
-          { text: '分类', link: '/categories/' },
-          { text: '标签', link: '/tags/' },
-          { text: '归档', link: '/archives/' },
-        ],
       },
       { text: '友链', link: '/friends/'},
       { text: '关于', link: '/pages/a083cc/' },
@@ -77,12 +80,12 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // ],
     // contentBgStyle: 1, // 文章内容块的背景风格，默认无. 1 方格 | 2 横线 | 3 竖线 | 4 左斜线 | 5 右斜线 | 6 点状
 
-    // updateBar: { // 最近更新栏
-    //   showToArticle: true, // 显示到文章页底部，默认true
-    //   moreArticle: '/archives' // “更多文章”跳转的页面，默认'/archives'
-    // },
+    updateBar: { // 最近更新栏
+      showToArticle: false, // 显示到文章页底部，默认true
+      moreArticle: '/archives' // “更多文章”跳转的页面，默认'/archives'
+    },
     // rightMenuBar: false, // 是否显示右侧文章大纲栏，默认true (屏宽小于1300px下无论如何都不显示)
-    // sidebarOpen: false, // 初始状态是否打开左侧边栏，默认true
+    sidebarOpen: false, // 初始状态是否打开左侧边栏，默认true
     // pageButton: false, // 是否显示快捷翻页按钮，默认true
 
     // 默认外观模式（用户未在页面手动修改过模式时才生效，否则以用户设置的模式为准），可选：'auto' | 'light' | 'dark' | 'read'，默认'auto'。
@@ -101,7 +104,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     blogger: {
       avatar: 'https://the0n3.top/medias/friends/syz.png',
       name: 'ajay',
-      slogan: 'ctf web php 摸鱼 甩锅 缝合怪',
+      slogan: 'ctf web 摸鱼 甩锅 缝合怪',
     },
 
     // 社交图标 (显示于博主信息栏和页脚栏。内置图标：https://doc.xugaoyi.com/pages/a20ce8/#social)
@@ -157,6 +160,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     ],
     ['meta', { name: 'baidu-site-verification', content: '7F55weZDDc' }], // 百度统计的站长验证（你可以去掉）
     ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
+    ['meta', { name: 'google-site-verification', content: '2rTU4TJf9FGp-0dfoTNgDPqEaVmD1mMxR_aabNaQXnQ' }], // Google验证
     // [
     //   'script',
     //   {
@@ -203,18 +207,18 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
             frontUrl: 'https://cn.bing.com/search?q=',
           },
           {
-            title: '在MDN中搜索',
-            frontUrl: 'https://developer.mozilla.org/zh-CN/search?q=', // 搜索链接的前面部分
+            title: '在Google中搜索',
+            frontUrl: 'https://www.google.com/search?q=', // 搜索链接的前面部分
             behindUrl: '', // 搜索链接的后面部分，可选，默认 ''
           },
-          {
-            title: '在Runoob中搜索',
-            frontUrl: 'https://www.runoob.com/?s=',
-          },
-          {
-            title: '在Vue API中搜索',
-            frontUrl: 'https://cn.vuejs.org/v2/api/#',
-          },
+          // {
+          //   title: '在Runoob中搜索',
+          //   frontUrl: 'https://www.runoob.com/?s=',
+          // },
+          // {
+          //   title: '在Vue API中搜索',
+          //   frontUrl: 'https://cn.vuejs.org/v2/api/#',
+          // },
         ],
       }
     ],

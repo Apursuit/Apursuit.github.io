@@ -41,7 +41,7 @@ jobs:
           git config user.name ${user_name}
           git config user.email ${user_email}
           git add -A
-          git commit -m "auto deploy, $commit_info"
+          git commit -m "$commit_info"
           remote_addr=`echo $remote_addr | awk -F'://' '{print $2}'`
           remote_addr=https://${user_name}:${{secrets.GITHUB_TOKEN}}@${remote_addr}
           git remote add origin ${remote_addr}
