@@ -21,7 +21,9 @@ jobs:
 
     steps:
       - name: Checkout # 步骤1
-        uses: actions/checkout@v1 # 使用的动作。格式：userName/repoName。作用：检出仓库，获取源码。 官方actions库：https://github.com/actions
+        uses: actions/checkout@v2.3.4 # 使用的动作。格式：userName/repoName。作用：检出仓库，获取源码。 官方actions库：https://github.com/actions
+        with:
+            fetch-depth: 0
       - name: Use Node.js ${{ matrix.node-version }} # 步骤2
         uses: actions/setup-node@v3 # 作用：安装nodejs
         with:

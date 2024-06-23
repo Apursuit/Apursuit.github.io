@@ -158,7 +158,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         content: 'ajay',
       },
     ],
-    ['meta', { name: 'baidu-site-verification', content: '7F55weZDDc' }], // 百度统计的站长验证（你可以去掉）
+    // ['meta', { name: 'baidu-site-verification', content: '7F55weZDDc' }], // 百度统计的站长验证（你可以去掉）
     ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
     ['meta', { name: 'google-site-verification', content: '2rTU4TJf9FGp-0dfoTNgDPqEaVmD1mMxR_aabNaQXnQ' }], // Google验证
     // [
