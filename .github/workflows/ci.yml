@@ -1,12 +1,12 @@
 name: CI
 
-#on: [push]
-
-# 在master分支发生push事件时触发。
 on:
+# 在master分支发生push事件时触发。
   push:
     branches:
       - master
+  workflow_dispatch: # 允许手动触发
+
 
 env: # 设置环境变量
   TZ: Asia/Shanghai # 时区（设置时区可使页面中的`最近更新时间`使用该时区时间）
