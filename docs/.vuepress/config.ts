@@ -279,7 +279,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       '@vuepress/last-updated', // "上次更新"时间格式
       {
         transformer: (timestamp, lang) => {
-          return dayjs(timestamp).format('YYYY/MM/DD, HH:mm:ss')
+          const moment = require('moment')
+          return moment(timestamp).format('YYYY/MM/DD, HH:mm:ss')
+          // return dayjs(timestamp).format('YYYY/MM/DD, HH:mm:ss')
         },
       },
     ],
