@@ -30,6 +30,15 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     nav: [
       { text: '首页', link: '/' },
       { text: "工具", link: "https://www.jyshare.com/" },
+      { text: "指南", 
+        
+        link: '' ,
+        items: [
+          { text: "新世界" , link: "https://xp0int-team.feishu.cn/wiki/wikcnnWbXXGELt1xHkyBhvdQKrh" },
+          { text: "Hello-CTF" , link: "https://hello-ctf.com/HC_Start/" },
+          { text: "CSDIY" , link: "https://www.jyshare.com/"},
+        ],
+      },
       
       {
         // text: '索引',
