@@ -29,7 +29,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // 导航配置
     nav: [
       { text: '首页', link: '/' },
-      
+      { text: "工具", link: "https://www.jyshare.com/" },
       
       {
         // text: '索引',
@@ -39,7 +39,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         //   { text: '标签', link: '/tags/' },
         //   { text: '归档', link: '/archives/' },
         // ],
-
         text: '归档',
         link: '/archives/',
       },
