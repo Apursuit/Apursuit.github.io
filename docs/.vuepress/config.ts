@@ -29,28 +29,27 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // 导航配置
     nav: [
       { text: '首页', link: '/' },
-      { text: "工具", link: "https://www.jyshare.com/" },
+      
+      { text: "工具", 
+        
+        link: '' ,
+        items: [
+          { text: "菜鸟工具" , link: "https://www.jyshare.com/" },
+          { text: "Zlibrary" , link: "https://zh.singlelogin.re/" },
+        ],
+      },
+
       { text: "指南", 
         
         link: '' ,
         items: [
-          { text: "新世界" , link: "https://xp0int-team.feishu.cn/wiki/wikcnnWbXXGELt1xHkyBhvdQKrh" },
+          { text: "入门综述" , link: "https://xp0int-team.feishu.cn/wiki/wikcnnWbXXGELt1xHkyBhvdQKrh" },
           { text: "Hello-CTF" , link: "https://hello-ctf.com/HC_Start/" },
           { text: "CSDIY" , link: "https://www.jyshare.com/"},
         ],
       },
       
-      {
-        // text: '索引',
-        // link: '/archives/',
-        // items: [
-        //   { text: '分类', link: '/categories/' },
-        //   { text: '标签', link: '/tags/' },
-        //   { text: '归档', link: '/archives/' },
-        // ],
-        text: '归档',
-        link: '/archives/',
-      },
+      { text: '归档',link: '/archives/' },
       { text: '友链', link: '/friends/'},
       { text: '关于', link: '/pages/a083cc/' },
       
@@ -141,7 +140,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     footer: {
       createYear: 2024, // 博客创建年份
       copyrightInfo:
-        'Evan Xu | <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE" target="_blank">MIT License</a>', // 博客版权信息、备案信息等，支持a标签或换行标签</br>
+        '', // 博客版权信息、备案信息等，支持a标签或换行标签</br>
     },
 
     // 扩展自动生成frontmatter。（当md文件的frontmatter不存在相应的字段时将自动添加。不会覆盖已有的数据。）
