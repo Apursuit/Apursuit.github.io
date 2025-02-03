@@ -26,13 +26,21 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
   // 主题配置
   themeConfig: {
-    // 导航配置
+// 导航配置
     nav: [
       { text: '首页', link: '/' },
       { text: '归档',link: '/archives/' },
       { text: '友链', link: '/friends/'},
-      { text: '收藏', link: '/pages/c52ab0/' },
-      { text: '歌单',link: 'https://the0n3.top/music/',target: '_blank',},
+
+      { text: '收藏',
+         link: '/pages/c52ab0/',
+//  下拉菜单
+            items: [
+                { text: '歌单', link: 'https://the0n3.top/music/',target: '_blank',},
+          ],
+      },
+
+      // { text: '歌单',link: 'https://the0n3.top/music/',target: '_blank',},
       { text: '开往', link: 'https://www.travellings.cn/go.html',},
       // { text: 'TODO',link: '/daily/'},
       // { text: '思考', link: '/thinking/'},
