@@ -1,9 +1,14 @@
 <template>
   <aside class="blogger-wrapper card-box">
+    <!-- 博主头像区域 -->
     <div class="avatar">
+      <!-- 动态绑定头像图片，显示图片的 alt 和 title 属性 -->
       <img :src="blogger.avatar" alt="头像" title="我好看吗" />
     </div>
+    
+    <!-- 社交图标区域 -->
     <div class="icons" v-if="social && social.icons && social.icons.length">
+      <!-- 遍历社交图标列表，每个图标为一个链接 -->
       <a
         v-for="(item, index) in social.icons"
         :key="index"
@@ -14,8 +19,12 @@
         target="_blank"
       />
     </div>
+
+    <!-- 博主信息区域 -->
     <div class="blogger">
+      <!-- 博主名称 -->
       <span class="name">{{ blogger.name }}</span>
+      <!-- 博主标语或口号 -->
       <span class="slogan">{{ blogger.slogan }}</span>
     </div>
   </aside>
@@ -24,9 +33,11 @@
 <script>
 export default {
   computed: {
+    // 从主题配置中获取博主信息
     blogger () {
       return this.$themeConfig.blogger
     },
+    // 从主题配置中获取社交信息
     social () {
       return this.$themeConfig.social
     }

@@ -93,8 +93,6 @@ export default {
       // 分类采用解析文件夹地址名称的方式 (即使关闭分类功能也可以正确跳转目录页)
       const relativePathArr = relativePath.split('/')
 
-      // const classifyArr = relativePathArr[0].split('.')
-
       relativePathArr.forEach((item, index) => {
         const nameArr = item.split('.')
 

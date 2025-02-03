@@ -1,6 +1,7 @@
 <template>
   <div class="custom-page archives-page">
     <div class="theme-vdoing-wrapper">
+      <!-- 页面标题，展示博客文章标题和徽章 -->
       <h1>
         <img
           :src="currentBadge"
@@ -8,11 +9,14 @@
         />
         {{ $page.title }}
       </h1>
+      <!-- 展示文章总数 -->
       <div class="count">
         总共 <i>{{ $sortPostsByDate.length }}</i> 篇文章
       </div>
+      <!-- 按年份分组展示文章列表 -->
       <ul>
         <template v-for="(item, index) in postsList">
+          <!-- 按年份分组，年份标题 -->
           <li
             class="year"
             v-if="(year = getYear(index)) !== getYear(index - 1)"
@@ -25,6 +29,7 @@
               </span>
             </h2>
           </li>
+          <!-- 每篇文章的链接和标题 -->
           <li :key="index">
             <router-link :to="item.path">
               <span class="date">{{ getDate(item) }}</span>
@@ -49,18 +54,17 @@ export default {
   mixins: [TitleBadgeMixin],
   data() {
     return {
-      postsList: [],
-      countByYear: {}, // 根据年份统计的文章数
+      postsList: [], // 当前展示的文章列表
+      countByYear: {}, // 按年份统计的文章数
 
-      perPage: 80, // 每页长
-      currentPage: 1// 当前页
-
+      perPage: 80, // 每页展示的文章数量
+      currentPage: 1 // 当前页码
     }
   },
   created() {
     this.getPageData()
 
-    // 根据年份计算出文章数
+    // 根据年份统计文章数量
     const { $sortPostsByDate, countByYear } = this
     for (let i = 0; i < $sortPostsByDate.length; i++) {
       const { frontmatter: { date } } = $sortPostsByDate[i];
@@ -69,12 +73,13 @@ export default {
         if (!countByYear[year]) {
           countByYear[year] = 0
         }
-        countByYear[year] = countByYear[year] + 1
+        countByYear[year] += 1
       }
     }
     this.countByYear = countByYear
   },
   mounted() {
+    // 监听滚动事件，实现懒加载
     window.addEventListener('scroll', debounce(() => {
       if (this.postsList.length < this.$sortPostsByDate.length) {
         const docEl = document.documentElement
@@ -91,15 +96,20 @@ export default {
     }, 200))
   },
   methods: {
+    // 获取当前页的数据
     getPageData() {
       const currentPage = this.currentPage
       const perPage = this.perPage
-      this.postsList = this.postsList.concat(this.$sortPostsByDate.slice((currentPage - 1) * perPage, currentPage * perPage))
+      this.postsList = this.postsList.concat(
+        this.$sortPostsByDate.slice((currentPage - 1) * perPage, currentPage * perPage)
+      )
     },
+    // 加载更多数据
     loadmore() {
-      this.currentPage = this.currentPage + 1
+      this.currentPage += 1
       this.getPageData()
     },
+    // 获取文章年份
     getYear(index) {
       const item = this.postsList[index]
       if (!item) {
@@ -110,6 +120,7 @@ export default {
         return date.slice(0, 4)
       }
     },
+    // 获取文章日期（MM-DD）
     getDate(item) {
       const { frontmatter: { date } } = item
       if (date && type(date) === 'string') {
@@ -123,11 +134,11 @@ export default {
 <style lang='stylus'>
 @require '../styles/wrapper.styl'
 
+/* 样式相关部分，主要处理归档页面布局与外观 */
 .theme-style-line
   .archives-page .theme-vdoing-wrapper
     box-shadow 0 0
-    // border 1px solid var(--borderColor)
-    // border-radius 5px
+
 .archives-page
   .theme-vdoing-wrapper
     @extend $vdoing-wrapper
@@ -183,8 +194,6 @@ export default {
           font-weight 400
           margin-right 0.3rem
         .title-tag
-          // height 1.1rem
-          // line-height 1.1rem
           border 1px solid $activeColor
           color $activeColor
           font-size 0.8rem

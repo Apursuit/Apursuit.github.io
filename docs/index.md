@@ -1,7 +1,7 @@
 ---
 home: true
 # heroImage: /img/web.png
-heroText: Cola
+heroText: the0n3
 tagline: 
 # actionText: 立刻进入 →
 # actionLink: /web/
