@@ -118,4 +118,4 @@ comment: false
 
 > 如果没有显示歌单，请尝试刷新页面
 
-<img src="https://the0n3.top/medias/zz-meme/mouse.jpg" alt="鼠鼠" style="width:50%;">
+![鼠鼠](https://the0n3.top/medias/zz-meme/mouse.jpg)
