@@ -34,7 +34,7 @@ comment: false
     transform: translateY(-1px);
 }
 
-/* 播放器控件深度美化 */
+/* 播放器控件容器 */
 #audioPlayer {
     width: 100%;
     height: 50px;
@@ -44,27 +44,57 @@ comment: false
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* 自定义原生控件样式 */
+/* 播放器控制面板 */
 #audioPlayer::-webkit-media-controls-panel {
     background: linear-gradient(145deg, #ffffff, #f8f8f8);
     border-radius: 8px;
 }
 
+/* 进度条统一样式 */
+#audioPlayer::-webkit-media-controls-timeline {
+    background-color: #eee;
+    border-radius: 2px;
+    height: 4px; /* 合并新增属性 */
+}
+
+#audioPlayer::-webkit-slider-container {
+    --track-height: 4px;
+    --thumb-size: 12px;
+}
+
+/* 播放按钮样式 */
 #audioPlayer::-webkit-media-controls-play-button {
     filter: brightness(0.9);
 }
 
-#audioPlayer::-webkit-media-controls-timeline {
-    background-color: #eee;
-    border-radius: 2px;
-}
-
+/* 时间显示样式 */
 #audioPlayer::-webkit-media-controls-current-time-display,
 #audioPlayer::-webkit-media-controls-time-remaining-display {
     color: #666;
 }
 
-/* 控制按钮优化 */
+/* 自定义滑块 */
+#audioPlayer::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: var(--thumb-size);
+    height: var(--thumb-size);
+    background: #3498db;
+    border-radius: 50%;
+    opacity: 1;
+    margin-top: calc((var(--track-height) - var(--thumb-size)) / 2);
+    transition: all 0.2s ease;
+}
+
+/* 悬停状态 */
+#audioPlayer:hover::-webkit-media-controls-timeline {
+    height: 6px;
+}
+
+#audioPlayer:hover::-webkit-slider-thumb {
+    transform: scale(1.2);
+}
+
+/* 控制按钮容器 */
 .control-btns {
     display: flex;
     justify-content: center;
@@ -72,6 +102,7 @@ comment: false
     margin: 20px 0;
 }
 
+/* 按钮基础样式 */
 .control-btn {
     padding: 8px 24px;
     background: rgba(52, 152, 219, 0.9);
@@ -103,6 +134,8 @@ comment: false
     padding-bottom: 8px;
     border-bottom: 1px solid #eee;
 }
+
+
 </style>
 
 <!-- 保持原有HTML结构不变 -->
