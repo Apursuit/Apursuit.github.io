@@ -9,18 +9,6 @@ article: false
 [知道创宇研发技能表v3.1](https://blog.knownsec.com/Knownsec_RD_Checklist/index.html)
 
 
-## 十一月 第二周
-
-不学ctf的时候过的是什么苦日子
-
-## 十一月 第一周
-
-// TODO
-
-- nginx玩法
-- flask session伪造
-- xxe
-
 
 <!-- 
 ## 10月计划
@@ -36,10 +24,7 @@ article: false
 - 了解java web
 - ~~美化博客小破站前端？~~ -->
 
-
-## 每(n)日一题
-
-难道这就是这副身躯的极限了吗
+一些刷题记录
 
 - [ctfshow RCE极限挑战](/pages/286e6c/)  24/10/10
 - [buu 部分flask题目](/pages/969484/)        24/10/04
