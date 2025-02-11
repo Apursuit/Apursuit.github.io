@@ -13,7 +13,6 @@ comment: false
     margin: 20px 0;
     list-style: none;
 }
-
 /* 列表项优化 */
 .mp3-list li {
     display: flex;
@@ -25,7 +24,7 @@ comment: false
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px); 
 }
 
 .mp3-list li:hover {
