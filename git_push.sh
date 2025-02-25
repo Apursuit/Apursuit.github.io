@@ -30,7 +30,6 @@ git add -A
 git commit -m "$commit_info"
   
 # 推送更改到指定分支
-# 推送后，提交就结束了
 git push -f "$push_addr" HEAD:"$push_branch"
 
 # cd -
