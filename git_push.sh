@@ -4,9 +4,9 @@
 set -e
 
 # git
-# push_addr=git@github.com:Apursuit/Apursuit.github.io.git # Git 提交地址
+push_addr=git@github.com:Apursuit/Apursuit.github.io.git # Git 提交地址
 # https
-push_addr=https://github.com/Apursuit/Apursuit.github.io.git # Git 提交地址
+# push_addr=https://github.com/Apursuit/Apursuit.github.io.git # Git 提交地址
 
 commit_info='commit'
 push_path=./ # 项目根目录
