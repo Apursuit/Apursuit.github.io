@@ -166,16 +166,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         src: '//unpkg.com/valine/dist/Valine.min.js',
       }
     ],
-    // 添加music.js
-    ['script', 
-      { 
-        src: 'https://the0n3.top/medias/siteJS/music.js',
-        defer: true,
-      }
-    ],
 
     // 引入新字体
-    ['link', { href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap', rel: 'stylesheet' }],
+    // ['link', { href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap', rel: 'stylesheet' }],
 
     // [
     //   'script',
@@ -214,19 +207,19 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       'thirdparty-search',
       {
         thirdparty: [
-          {
-            title: '通过百度搜索本站的',
-            frontUrl: `https://www.baidu.com/s?wd=site%3A${DOMAIN_NAME}%20`,
-          },
-          {
-            title: '在Bing中搜索',
-            frontUrl: 'https://cn.bing.com/search?q=',
-          },
-          {
-            title: '在Google中搜索',
-            frontUrl: 'https://www.google.com/search?q=', // 搜索链接的前面部分
-            behindUrl: '', // 搜索链接的后面部分，可选，默认 ''
-          },
+          // {
+          //   title: '通过百度搜索本站的',
+          //   frontUrl: `https://www.baidu.com/s?wd=site%3A${DOMAIN_NAME}%20`,
+          // },
+          // {
+          //   title: '在Bing中搜索',
+          //   frontUrl: 'https://cn.bing.com/search?q=',
+          // },
+          // {
+          //   title: '在Google中搜索',
+          //   frontUrl: 'https://www.google.com/search?q=', // 搜索链接的前面部分
+          //   behindUrl: '', // 搜索链接的后面部分，可选，默认 ''
+          // },
           // {
           //   title: '在Runoob中搜索',
           //   frontUrl: 'https://www.runoob.com/?s=',
@@ -240,12 +233,13 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     ],
 
     [
-      'one-click-copy', // 代码块复制按钮
+       // 代码块复制按钮
+      'one-click-copy',
       {
         copySelector: ['div[class*="language-"] pre', 'div[class*="aside-code"] aside'], // String or Array
-        copyMessage: '复制成功', // default is 'Copy successfully and then paste it for use.'
-        duration: 1000, // prompt message display time.
-        showInMobile: false, // whether to display on the mobile side, default: false.
+        copyMessage: '复制成功',
+        duration: 1000,
+        showInMobile: false,
       },
     ],
 
