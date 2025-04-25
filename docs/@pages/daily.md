@@ -9,21 +9,6 @@ article: false
 [知道创宇研发技能表v3.1](https://blog.knownsec.com/Knownsec_RD_Checklist/index.html)
 
 
-
-<!-- 
-## 10月计划
-- js基础
-- 浏览器js调试
-- ~~php后门函数分析学习~~
-- js,python原型链污染
-- ~~sql盲注脚本分析、学习、编写~~
-- ~~python多线程学习~~
-- ~~flask pin计算~~
-- show、buu、攻防世界flask ssti赛题
-- flask内存马注入
-- 了解java web
-- ~~美化博客小破站前端？~~ -->
-
 一些刷题记录
 
 - [ctfshow RCE极限挑战](/pages/286e6c/)  24/10/10
