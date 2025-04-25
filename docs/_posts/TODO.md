@@ -1,0 +1,48 @@
+---
+title: 置顶帖
+date: 2025-04-25 23:49:28
+permalink: /pages/sticky/
+sticky: 1
+sidebar: true
+comment: false
+categories:
+  - 随笔
+tags:
+  - 
+author: 
+  name: the0n3
+  link: https://the0n3.top
+---
+
+
+## Linux do精华帖
+
+- [【原创，个人主观】网络安全考证路径分享，包括攻防双方向 - 弗洛伊德](https://linux.do/t/topic/335796)
+- [【每周更新】OSCP攀登计划-渗透测试报告清单linux.do版本 - muyuan](https://linux.do/t/topic/534134)
+
+
+## 工具
+
+- [geek uninstall](https://geekuninstaller.com/download)
+- [snipaste](https://zh.snipaste.com/)
+- [utools](https://www.u-tools.cn/)
+- [ventoy](https://www.ventoy.net/cn/doc_start.html)
+- [MobaXterm-Chinese-Simplified](https://github.com/RipplePiam/MobaXterm-Chinese-Simplified)
+- [windows terminal](https://github.com/microsoft/terminal)
+- [Office-Tool](https://github.com/YerongAI/Office-Tool)
+- [PC突破123盘1G下载限制工具分享](https://www.52pojie.cn/thread-1972567-1-1.html)
+- [docker - 清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn/help/docker-ce/)
+- [phpstudy](https://www.xp.cn/)
+- [D盾](https://www.d99net.net/)
+- [Burp Suite 2024.10](https://www.52pojie.cn/thread-1544866-1-1.html)
+- [kali](https://www.kali.org/get-kali/#kali-platforms)
+- [Nmap](https://github.com/nmap/nmap)
+- [sqlmap](https://github.com/sqlmapproject/sqlmap)
+- [fscan](https://github.com/shadow1ng/fscan)
+- [Goby](https://gobysec.net/)
+
+
+## 大佬博客收集
+
+- [baozongwi](https://baozongwi.xyz)
+- [Zgao's blog](https://zgao.top/)
