@@ -88,7 +88,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // pageButton: false, // 是否显示快捷翻页按钮，默认true
 
     // 默认外观模式（用户未在页面手动修改过模式时才生效，否则以用户设置的模式为准），可选：'auto' | 'light' | 'dark' | 'read'，默认'auto'。
-    // defaultMode: 'auto',
+    defaultMode: 'dark',
 
     // 侧边栏  'structuring' | { mode: 'structuring', collapsable: Boolean} | 'auto' | <自定义>    温馨提示：目录页数据依赖于结构化的侧边栏数据，如果你不设置为'structuring',将无法使用目录页
     sidebar: 'structuring',
@@ -178,7 +178,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     //     async: 'async',
     //     src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
     //   },
-    // ], // 网站关联Google AdSense 与 html格式广告支持（你可以去掉）
+    // ], 
   ],
 
 
@@ -276,7 +276,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
             appId: '8sJ6G7Cx71Y6wk8uc4Oa8gPO-MdYXbMMI',
             appKey: '8YrCdIYhCyYl24kayTnsl18U',
             // 评论框占位内容
-            placeholder: "评论支持Markdown语法",
+            placeholder: "给读者打个招呼，Ciallo～(∠・ω< )⌒★",
             // 评论者头像
             avatar: "mp",
             // 是否启用昵称框自动获取QQ昵称和QQ头像
