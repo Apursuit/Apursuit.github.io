@@ -29,7 +29,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 // 导航配置
     nav: [
       { text: '首页', link: '/' },
-      { text: '标签', link: '/tags/' },
       { text: '归档',link: '/archives/' },
       { text: '友链', link: '/friends/'},
       { text: '收藏', link: '/pages/c52ab0/'},
