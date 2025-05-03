@@ -150,13 +150,10 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   // 注入到页面<head>中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
   head: [
     ['link', { rel: 'icon', href: '/img/favicon.ico' }], //favicons，资源放在public文件夹
-    [
-      'meta',
-      {
-        name: 'keywords',
-        content: 'ctf,web,php,编程学习,技术分享,前端博客,个人技术博客,学习,github,markdown',
-      },
-    ],
+    // 基本 meta 标签
+    ['meta', { name: 'keywords', content: 'ctf,web,php,sql注入,xss,文件上传,文件包含,反序列化,代码审计,ssti模板注入,命令执行,框架复现,漏洞复现,渗透测试,内网,域,提权,网络安全,安全工具,漏洞分析,安全博客' }],
+    ['meta', { name: 'description', content: 'CTF学习、Web安全技术分享、渗透测试技巧、网络安全工具使用指南' }],
+    ['meta', { name: 'author', content: 'the0n3' }],
     // ['meta', { name: 'baidu-site-verification', content: '7F55weZDDc' }], // 百度统计的站长验证（你可以去掉）
     ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
     ['meta', { name: 'google-site-verification', content: '2rTU4TJf9FGp-0dfoTNgDPqEaVmD1mMxR_aabNaQXnQ' }], // Google验证
