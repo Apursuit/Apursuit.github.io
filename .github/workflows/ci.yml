@@ -40,6 +40,7 @@ jobs:
           cd docs/.vuepress/dist
           echo "User-agent: *" > robots.txt  # 创建rebots.txt
           echo "Allow: /" >> robots.txt
+          echo "Sitemap: https://the0n3.top/sitemap.xml" >> robots.txt # 生成sitemap.xml
           git config --global init.defaultBranch $deploy_branch
           git init
           git config user.name ${user_name}
