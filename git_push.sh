@@ -3,12 +3,18 @@
 # 确保脚本抛出遇到的错误
 set -e
 
+# 设置 Git 提交人信息（可自定义）
+git config user.name "Apursuit"
+git config user.email "131228600+Apursuit@users.noreply.github.com"
+
+# 处理 commit 信息：优先使用第一个参数，否则用默认值
+commit_info=${1:-"commit"}
+
 # git
 push_addr=git@github.com:Apursuit/Apursuit.github.io.git # Git 提交地址
 # https
 # push_addr=https://github.com/Apursuit/Apursuit.github.io.git # Git 提交地址
 
-commit_info='commit'
 push_path=./ # 项目根目录
 dist_path=./docs/.vuepress/dist # 打包生成的文件夹路径
 push_branch=master # 推送的分支
@@ -36,4 +42,3 @@ git push -f "$push_addr" HEAD:"$push_branch"
 
 # 删除临时文件夹
 # rm -rf "$dist_path"
-
