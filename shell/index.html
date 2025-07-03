@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>反弹shell命令在线生成</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div id="app" :class="{ 'dark-mode': isDark }">
+        <header>
+            <h1>反弹shell命令在线生成</h1>
+            <button @click="toggleTheme" class="theme-toggle">
+                <i class="material-icons">{{ isDark ? 'light_mode' : 'dark_mode' }}</i>
+            </button>
+        </header>
+
+        <div class="input-group">
+            <div class="input-item">
+                <label>LHOST</label>
+                <input type="text" v-model="LHOST" placeholder="Enter IP address">
+            </div>
+            <div class="input-item">
+                <label>LPORT</label>
+                <input type="number" v-model="LPORT" placeholder="Enter port">
+            </div>
+        </div>
+
+        <div class="payloads">
+            <div v-for="(payload, index) in payloads" :key="index" class="payload-item">
+                <h3>{{ payload.name }}</h3>
+                <div v-for="(cmd, cmdIndex) in payload.commands" :key="cmdIndex" class="command-block">
+                    <pre><code>{{ renderCommand(cmd.raw) }}</code></pre>
+                    <button @click="copyCommand(renderCommand(cmd.raw))">
+                        <i class="fa-regular fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <span>参考： <a href="https://github.com/xuanhusec/OscpStudyGroup/blob/master/0x0004-%E5%8F%8D%E5%BC%B9shell%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB.md">反弹shell方法汇总</a></span>
+        <details class="disclaimer" open>
+            <summary>免责声明</summary>
+            <p>⚠️ 本工具仅用于网络安全学习与合法授权的测试环境，严禁用于未授权的渗透测试与黑客行为。</p>
+            <p>⚠️ 使用本工具造成的任何后果与本工具作者无关，用户需自行承担法律责任。</p>
+            <p>⚠️ 本工具是静态页面，不会储存用户数据。</p>
+        </details>
+    </div>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
