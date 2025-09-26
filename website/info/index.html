@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>获取网站图标接口</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px; /* Limit width for better readability */
+            width: 90%;
+        }
+        #result {
+            margin-top: 20px;
+            white-space: pre-wrap; /* Preserve whitespace and line breaks */
+            text-align: left;
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto; /* Enable horizontal scrolling if content is too wide */
+        }
+        h1 {
+            color: #0056b3;
+        }
+        .favicon-img {
+            max-width: 64px;
+            max-height: 64px;
+            margin-top: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>网站图标获取器</h1>
+        <p>请在URL中添加`?url=https://yourwebsite.com`参数</p>
+        <div id="result">
+            等待获取数据...
+        </div>
+        <img id="faviconDisplay" class="favicon-img" style="display:none;" alt="网站图标">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const targetUrl = urlParams.get('url');
+            const resultDiv = document.getElementById('result');
+            const faviconDisplay = document.getElementById('faviconDisplay');
+            const iconSize = 64; // 你可以固定或根据需要调整图标大小
+
+            if (targetUrl) {
+                // Google Favicon API (非官方接口，可能会随时失效)
+                const faviconApiUrl = `https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent(targetUrl)}&size=${iconSize}`;
+
+                // 构建你想要的 JSON 数据结构
+                const dataToReturn = {
+                    "code": 200,
+                    "data": {
+                        "type": 1,
+                        "_id": "60b9ea72ae5a9ba4024b3704", // 示例ID，实际可能需要动态生成或从其他来源获取
+                        "name": new URL(targetUrl).hostname.replace('www.', '').split('.')[0], // 从URL中提取名称
+                        "url": targetUrl,
+                        "src": faviconApiUrl, // 图标的直接链接
+                        "imgSrc": faviconApiUrl, // 图标的直接链接
+                        "backgroundColor": "#346efd" // 示例颜色
+                    },
+                    "msg": "请求成功"
+                };
+
+                // 在页面上显示 JSON 结果
+                resultDiv.textContent = JSON.stringify(dataToReturn, null, 2);
+
+                // 显示图标（如果需要）
+                faviconDisplay.src = faviconApiUrl;
+                faviconDisplay.style.display = 'block'; // 显示图片
+
+            } else {
+                resultDiv.textContent = "URL参数未找到。请在URL中添加 'url' 参数，例如: ?url=https://www.google.com";
+                faviconDisplay.style.display = 'none'; // 隐藏图片
+            }
+        });
+    </script>
+</body>
+</html>
