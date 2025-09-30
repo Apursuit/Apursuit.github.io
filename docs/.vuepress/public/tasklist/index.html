@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Windows杀软进程匹配工具 (静态版)</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link href="https://cdn.bootcss.com/amazeui/2.2.1/css/amazeui.min.css" rel="stylesheet">
+<style>
+    /* 1. 居中容器和增加内边距，提升视觉效果 */
+    .container {
+        max-width: 960px; /* 限制内容最大宽度 */
+        margin: 20px auto; /* 居中显示 */
+        padding: 0 15px; /* 左右内边距 */
+    }
+    /* 2. 优化表格与标题的间距 */
+    .am-titlebar {
+        margin-top: 20px;
+    }
+    /* 3. 优化加载和错误信息的样式 */
+    #resultTableBody td {
+        text-align: center;
+        font-style: italic;
+        color: #999;
+    }
+    /* 4. 优化输入框的高度和样式 */
+    #input_process {
+        border-radius: 4px; /* 增加圆角 */
+        min-height: 250px; /* 略微增加高度 */
+        font-family: monospace; /* 代码字体，更适合粘贴命令行输出 */
+    }
+</style>
+</head>
+
+<body>
+<header class="am-topbar am-topbar-inverse" data-am-sticky>
+    <div class="am-container">
+        <h1 class="am-topbar-brand">
+            <a href="#">Windows杀软进程匹配</a>
+        </h1>
+        <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+            <ul class="am-nav am-nav-pills am-topbar-nav">
+                <li class="am-active"><a href="#">首页</a></li>
+                <li><a href="https://github.com/Apursuit/get_AV" target="_blank">项目 GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    
+    <div class="am-panel am-panel-default">
+        <div class="am-panel-hd">匹配结果</div>
+        <table class="am-table am-table-bd am-table-striped am-table-hover">
+            <thead>
+                <tr>
+                    <th style="width: 50%;">系统进程 (Process)</th>
+                    <th>杀软名称 (Antivirus)</th>
+                </tr>
+            </thead>
+            <tbody id="resultTableBody">
+                <tr id="initialPlaceholder">
+                    <td colspan="2"><i class="am-icon-spinner am-icon-spin"></i> 正在加载杀软数据... 请稍候。</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default">
+        <h2 class="am-titlebar-title">粘贴 tasklist /SVC 输出</h2>
+        <div class="am-titlebar-nav"><p>请在 Windows 命令提示符 (CMD) 或 PowerShell 中运行 tasklist /SVC 并复制全部内容到下方。</p></div>
+    </div>
+
+    <form class="am-form" id="processForm">
+        <fieldset>
+            <div class="am-form-group">
+                <textarea class="am-form-field" rows="15" id="input_process" name="input_process" placeholder="在此粘贴 tasklist /SVC 的输出..."></textarea>
+            </div>
+            <p>
+                <button type="submit" class="am-btn am-btn-primary am-btn-lg am-btn-block"><i class="am-icon-check"></i> 开始匹配</button>
+            </p>
+        </fieldset>
+    </form>
+    
+    <footer data-am-widget="footer" class="am-footer am-footer-default" style="margin-top: 30px;">
+        <div class="am-footer-miscs ">
+            <p>技术支持：<a href="https://www.se7ensec.cn/" title="Se7en" target="_blank">Se7en</a></p>
+            <p>CopyRight © 2019 All Rights Reserved.</p>
+        </div>
+    </footer>
+</div>
+
+<script src="https://cdn.bootcss.com/amazeui/2.2.1/js/amazeui.min.js"></script>
+
+<script>
+let avData = {}; // 用于存储从 av.json 获取的数据
+const resultTableBody = document.getElementById('resultTableBody');
+const initialPlaceholder = document.getElementById('initialPlaceholder');
+const submitButton = document.querySelector('#processForm button[type="submit"]');
+
+// 禁用提交按钮，直到数据加载完成
+submitButton.disabled = true;
+
+// 1. 定义匹配和显示结果的函数
+function matchAndDisplay(inputProcessesText) {
+    if (Object.keys(avData).length === 0) {
+        resultTableBody.innerHTML = '<tr><td colspan="2">错误：数据未加载或加载失败。</td></tr>';
+        return;
+    }
+    
+    resultTableBody.innerHTML = ''; // 清空现有结果
+    
+    if (inputProcessesText === '') {
+        resultTableBody.innerHTML = '<tr><td colspan="2" class="am-text-warning">输入为空，请粘贴 tasklist /SVC 的输出。</td></tr>';
+        return;
+    }
+
+    const inputLines = inputProcessesText.split('\n').map(line => line.trim()).filter(line => line.length > 0);
+    let matchFound = false;
+    let resultsHtml = '';
+    const matchedAVs = new Set();
+    
+    // 遍历输入行并进行匹配
+    for (const inputLine of inputLines) {
+        for (const [avProcess, avName] of Object.entries(avData)) {
+            // 使用正则表达式进行不区分大小写的匹配
+            // 注意：这里仅检查输入行是否包含进程名（不含路径或服务名）
+            const regex = new RegExp('\\b' + avProcess.replace('.', '\\.') + '\\b', 'i'); // 增加 \b 确保匹配整个单词
+            
+            if (regex.test(inputLine)) {
+                if (!matchedAVs.has(avName)) {
+                    // 结果行使用成功的样式
+                    resultsHtml += '<tr class="am-success"><td><strong>' + avProcess + '</strong></td><td><strong>' + avName + '</strong></td></tr>';
+                    matchedAVs.add(avName);
+                    matchFound = true;
+                }
+                break;
+            }
+        }
+    }
+
+    // 输出结果
+    if (matchFound) {
+        // 如果找到匹配，在表格底部增加提示信息
+        resultsHtml += '<tr class="am-active"><td colspan="2" style="text-align: center;">匹配完毕，共找到 ' + matchedAVs.size + ' 款杀软进程。</td></tr>';
+        resultTableBody.innerHTML = resultsHtml;
+    } else {
+        resultTableBody.innerHTML = '<tr><td class="am-text-danger">暂无匹配的杀软进程！</td><td class="am-text-danger">环境可能相对干净，欢迎补充数据！</td></tr>';
+    }
+}
+
+
+// 2. 使用 fetch API 在页面加载时获取数据
+fetch('av.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(response.statusText || '文件未找到');
+        }
+        return response.json();
+    })
+    .then(data => {
+        avData = data; 
+        // 数据加载成功，更新提示并启用按钮
+        initialPlaceholder.innerHTML = '<td colspan="2" class="am-text-success">数据已加载！请粘贴 tasklist /SVC 的结果，然后点击**开始匹配**。</td>';
+        submitButton.disabled = false;
+    })
+    .catch(error => {
+        // 数据加载失败
+        console.error('加载杀软数据失败:', error);
+        initialPlaceholder.innerHTML = '<td colspan="2" class="am-text-danger"><strong>数据加载失败！</strong> 请确保 \'av.json\' 文件存在且格式正确。 (' + error.message + ')</td>';
+        submitButton.disabled = true;
+        submitButton.textContent = '数据加载失败';
+    });
+
+
+// 3. 监听表单提交事件
+document.getElementById('processForm').addEventListener('submit', function(e) {
+    e.preventDefault(); 
+    
+    // 提交时改变按钮状态
+    submitButton.innerHTML = '<i class="am-icon-spinner am-icon-spin"></i> 正在匹配...';
+    submitButton.disabled = true;
+
+    const inputArea = document.getElementById('input_process');
+    const inputProcessesText = inputArea.value.trim();
+    
+    // 使用 setTimeout 模拟异步操作，避免在主线程中长时间阻塞
+    setTimeout(() => {
+        matchAndDisplay(inputProcessesText);
+        // 匹配完成后恢复按钮状态
+        submitButton.innerHTML = '<i class="am-icon-check"></i> 开始匹配';
+        submitButton.disabled = false;
+    }, 50); // 短暂延迟，让加载状态可见
+});
+</script>
+</html>

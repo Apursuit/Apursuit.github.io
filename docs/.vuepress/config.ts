@@ -32,13 +32,14 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       { text: '归档',link: '/archives/' },
       { text: '友链', link: '/friends/'},
       { text: '收藏', link: '/pages/c52ab0/'},
-//       { text: '收藏',
-//          link: '/pages/c52ab0/',
-// //  下拉菜单
-//             items: [
-//                 { text: '歌单', link: 'https://the0n3.top/music/',target: '_blank',},
-//           ],
-//       },
+      { text: '在线工具',
+         link: '#',
+//  下拉菜单
+            items: [
+                { text: 'windows杀软在线对比', link: '/tasklist/',target: '_blank',},
+                { text: '反弹shell生成', link: '/shell/',target: '_blank',},
+          ],
+      },
 
       // { text: '歌单',link: 'https://the0n3.top/music/',target: '_blank',},
       { text: '开往', link: 'https://www.travellings.cn/go.html',},
