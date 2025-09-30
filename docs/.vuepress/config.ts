@@ -36,8 +36,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
          link: '#',
 //  下拉菜单
             items: [
-                { text: 'windows杀软在线对比', link: '/tasklist/',target: '_blank',},
-                { text: '反弹shell生成', link: '/shell/',target: '_blank',},
+                { text: 'windows杀软在线对比', link: 'https://the0n3.top/tasklist/',target: '_blank',},
+                { text: '反弹shell生成', link: 'https://the0n3.top/shell/',target: '_blank',},
           ],
       },
 
