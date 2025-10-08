@@ -1,0 +1,53 @@
+name: 部署-推送
+
+on:
+  # 在master分支发生push事件时触发。
+  push:
+    branches:
+      - master
+  workflow_dispatch: # 允许手动触发
+
+env: # 设置环境变量
+  TZ: Asia/Shanghai # 时区
+  DIST_PATH: docs/.vuepress/dist
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+      - name: 1. Checkout # 1. 检出仓库
+        uses: actions/checkout@v2.3.4
+        with:
+            fetch-depth: 0
+            
+      - name: 2. Set up Node.js Environment # 2. 设置 Node.js 环境
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          
+      - name: 3. Set up Python and Install Requests # 3. 设置 Python 环境和依赖
+        run: pip install requests
+        
+      - name: 4. Install Node Dependencies # 4. 安装 Yarn 依赖
+        run: yarn
+        
+      - name: 5. Build VuePress Site # 5. 构建网站 (生成 dist 目录，包含所有 HTML 和 Key 文件)
+        run: yarn build
+      
+      - name: 6. Execute IndexNow Tracker and Submit # 6. 运行 Python 脚本
+        # 脚本将： a. 访问线上 URL 读取旧状态； b. 计算差集并提交 IndexNow； c. 写入新的状态文件到本地 dist 目录。
+        run: |
+          chmod +x ./deploy/url_tracker.py
+          python ./deploy/url_tracker.py
+
+      - name: 7. Deploy to GitHub Pages (Git Push) # 7. 部署到 gh-pages 分支
+        run: |
+          chmod +x ./deploy/deploy.sh
+          ./deploy/deploy.sh
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}

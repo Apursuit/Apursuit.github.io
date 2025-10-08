@@ -1,0 +1,162 @@
+// 隐藏logo
+img.logo
+  display: none !important
+
+// 隐藏Github
+a.repo-link
+  display: none !important
+
+// 隐藏作者
+span.iconfont.icon-touxiang
+  display: none
+
+// 归档时间右浮动
+span.date
+  float: right
+
+// 添加字体
+body
+  font-family: "Times New Roman", "Noto Serif CJK SC", "Songti SC", "Microsoft YaHei", serif, -apple-system, BlinkMacSystemFont
+  line-height: 1.6
+  font-size: 16px
+  color: #000
+
+h1, h2, h3, h4, h5, h6
+  font-family: "Times New Roman", "Noto Serif CJK SC", "Songti SC", "Microsoft YaHei", serif, -apple-system, BlinkMacSystemFont
+
+.excerpt-wrapper p img
+  display: block;
+  margin: 0 auto;
+
+// p标签img居中
+.content-wrapper p img
+  max-width: 70%!important;
+  height: auto; 
+  display: block;
+  margin: 0 auto;
+
+// 版心块添加圆角属性
+.theme-vdoing-wrapper
+  border-radius: 10px !important
+
+// 自定义提示块添加圆角属性
+.custom-block
+  border-radius: 6px
+
+// 文章图片添加圆角属性
+p img
+  border-radius: 8px
+
+// 修改p标签字体大小
+p
+  font-size: 18px
+
+// banner改写
+.banner
+  min-height:0px !important
+
+// banner content隐藏
+.banner-conent
+  display: none
+
+
+
+// 评论区样式
+#vcomments .vheader .vnick 
+  width: 31%;
+  border: 2px solid #dedede;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+
+
+#vcomments .vheader .vmail 
+  width: 31%;
+  border: 2px solid #dedede;
+  margin-left: 34px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+
+
+#vcomments .vheader .vlink 
+  width: 31%;
+  border: 2px solid #dedede;
+  margin-left: 34px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+
+
+
+// 评论区颜色重置
+.gt-container
+  .gt-ico-tip
+    &::after
+      content: '。( Win + . ) 或 ( ⌃ + ⌘ + ␣ ) 打开表情'
+      color: #999
+      font-size: .8rem
+  .gt-meta
+    border-color var(--borderColor)!important
+  .gt-comments-null
+    color var(--textColor)
+    opacity .5
+  .gt-header-textarea
+    color var(--textColor)
+    background rgba(180,180,180,0.1)!important
+  .gt-btn
+    border-color $accentColor!important
+    background-color $accentColor!important
+  .gt-btn-preview
+    background-color rgba(255,255,255,0)!important
+    color $accentColor!important
+  a
+    color $accentColor!important
+  .gt-svg svg
+    fill $accentColor!important
+  .gt-comment-content,.gt-comment-admin .gt-comment-content
+    background-color rgba(150,150,150,0.1)!important
+    &:hover
+      box-shadow 0 0 25px rgba(150,150,150,.5)!important
+    .gt-comment-body
+      color var(--textColor)!important
+
+
+// qq徽章
+.qq
+  position: relative;
+.qq::after
+  content: "可撩";
+  background: $accentColor;
+  color:#fff;
+  padding: 0 5px;
+  border-radius: 10px;
+  font-size:12px;
+  position: absolute;
+  top: -4px;
+  right: -35px;
+  transform:scale(0.85);
+
+// demo模块图标颜色
+body .vuepress-plugin-demo-block__wrapper
+  &,.vuepress-plugin-demo-block__display
+    border-color rgba(160,160,160,.3)
+  .vuepress-plugin-demo-block__footer:hover
+    .vuepress-plugin-demo-block__expand::before
+      border-top-color: $accentColor !important;
+      border-bottom-color: $accentColor !important;
+    svg
+      fill: $accentColor !important;
+
+// 全文搜索框
+.suggestions
+  overflow: auto
+  max-height: calc(100vh - 6rem)
+  @media (max-width: 719px) {
+    width: 90vw;
+    min-width: 90vw!important;
+    margin-right: -20px;
+  }
+  .highlight
+    color: $accentColor
+    font-weight: bold
