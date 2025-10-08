@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的常用工具箱 (终极极简深色)</title>
+    <title>Tools</title>
     <style>
         :root {
             --color-primary: #8ab4f8; 
@@ -162,7 +162,6 @@
 <body>
 
     <div class="container">
-        <h1>博客/工具收集</h1>
 
         <h2>博客收集</h2>
         <ul id="blog-list"></ul>
@@ -177,7 +176,7 @@
 
     <script>
         // ==========================================================
-        // 核心数据定义区域：方便统一复制粘贴的格式 (与之前相同)
+        // 核心数据定义区域：方便统一复制粘贴的格式
         // ==========================================================
         
         const toolsData = {
@@ -250,13 +249,32 @@
         };
 
         // ==========================================================
-        // JavaScript 渲染逻辑 (增加了点击事件处理)
+        // 核心功能：数组乱序函数 (Fisher-Yates 洗牌算法)
+        // ==========================================================
+        function shuffleArray(array) {
+            let currentIndex = array.length, randomIndex;
+
+            // 当还有元素没有洗牌时...
+            while (currentIndex != 0) {
+
+                // 随机选取一个剩余的元素...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+
+                // ...并与当前元素交换
+                [array[currentIndex], array[randomIndex]] = [
+                    array[randomIndex], array[currentIndex]];
+            }
+
+            return array;
+        }
+
+        // ==========================================================
+        // JavaScript 渲染逻辑
         // ==========================================================
 
         /**
          * 渲染通用工具列表 (装机工具, 渗透工具)
-         * @param {Array} data - 工具数据数组
-         * @param {string} elementId - 目标 UL 元素的 ID
          */
         function renderTools(data, elementId) {
             const listElement = document.getElementById(elementId);
@@ -279,12 +297,12 @@
 
         /**
          * 渲染博客列表
-         * @param {Array} data - 博客数据数组
          */
         function renderBlogs(data) {
             const listElement = document.getElementById('blog-list');
             if (!listElement) return;
-
+            
+            // 🌟 博客数据在渲染前已经被 shuffleArray 处理
             const html = data.map(item => `
                 <li data-link="${item.link}" title="${item.name}">
                     <a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.name}</a>
@@ -298,7 +316,6 @@
          * 处理整个列表项的点击事件
          */
         function handleItemClick(event) {
-            // 找到被点击的 li 元素，不论点击的是 li 内部的哪个子元素
             const listItem = event.target.closest('li');
             if (listItem) {
                 const link = listItem.dataset.link;
@@ -318,9 +335,10 @@
         document.addEventListener('DOMContentLoaded', () => {
             renderTools(toolsData['installation-tools'], 'installation-tools-list');
             renderTools(toolsData['pentest-tools'], 'pentest-tools-list');
-            renderBlogs(toolsData['blogs']);
 
-            // 统一为所有工具和博客列表添加点击监听器
+            const shuffledBlogs = shuffleArray(toolsData['blogs']);
+            renderBlogs(shuffledBlogs);
+
             document.getElementById('installation-tools-list').addEventListener('click', handleItemClick);
             document.getElementById('pentest-tools-list').addEventListener('click', handleItemClick);
             document.getElementById('blog-list').addEventListener('click', handleItemClick);
