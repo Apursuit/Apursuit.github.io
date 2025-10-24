@@ -59,8 +59,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     //*** 以下是Vdoing主题相关配置，文档：https://doc.xugaoyi.com/pages/a20ce8/ ***//
 
-    category: true, // 是否打开分类功能，默认true
-    tag: true, // 是否打开标签功能，默认true
+    category: false, // 是否打开分类功能，默认true
+    tag: false, // 是否打开标签功能，默认true
     // archive: false, // 是否打开归档功能，默认true
     // categoryText: '随笔', // 碎片化文章（_posts文件夹的文章）预设生成的分类值，默认'随笔'
 
