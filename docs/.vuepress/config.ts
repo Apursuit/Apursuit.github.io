@@ -164,13 +164,13 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     ],
     // 代码高亮样式
     ['link', { rel: 'stylesheet', href: '/codeStyle/styles/github-dark.min.css' }],
-    ['script', {}, 'hljs.highlightAll();'],
     [
       'script',
       {
         src: '/codeStyle/highlight.min.js',
       }
     ],
+    ['script', {}, 'hljs.highlightAll();'],
 
     // 引入新字体
     // ['link', { href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap', rel: 'stylesheet' }],
