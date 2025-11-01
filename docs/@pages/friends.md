@@ -25,7 +25,7 @@ cardList 后面可跟随一个数字表示每行最多显示多少个，选值�
 
 - name: 秋雨样
   desc: 想玩电脑awa
-  avatar: https://www.qjzhalx.top/wp-content/uploads/2024/07/NUVKEN1VY3H7RL5.jpg
+  avatar: /medias/friends/qyx.png
   link: https://amqyy.cn/
   bgColor: '#f5f5f5'
   textColor: '#363636'
