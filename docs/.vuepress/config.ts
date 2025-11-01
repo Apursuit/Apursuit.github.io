@@ -164,6 +164,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     ],
     // 代码高亮样式
     ['link', { rel: 'stylesheet', href: '/codeStyle/styles/github-dark.min.css' }],
+    ['script', {}, 'hljs.highlightAll();'],
     [
       'script',
       {
