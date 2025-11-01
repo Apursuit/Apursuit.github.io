@@ -44,8 +44,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
       // { text: '歌单',link: 'https://the0n3.top/music/',target: '_blank',},
       { text: '开往', link: 'https://www.travellings.cn/go.html',},
-      // { text: 'TODO',link: '/daily/'},
-      // { text: '思考', link: '/thinking/'},
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     logo: '/img/logo.png', // 导航栏logo
@@ -101,11 +99,10 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     },
 
     // 博主信息 (显示在首页侧边栏)
-    // 觉不美观，遂弃
     // blogger: {
     //   avatar: 'https://the0n3.top/medias/friends/syz.png',
-    //   name: 'Cola',
-    //   slogan: 'ctf web 摸鱼 甩锅 缝合怪',
+    //   name: '',
+    //   slogan: '',
     // },
 
     // 社交图标 (显示于博主信息栏和页脚栏。内置图标：https://doc.xugaoyi.com/pages/a20ce8/#social)
@@ -115,7 +112,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         {
           iconClass: 'icon-youjian',
           title: '发邮件',
-          link: 'mailto:apursuit27@gmail.com',
+          link: 'mailto:admin@gmail.com',
         },
         {
           iconClass: 'icon-github',
@@ -163,6 +160,14 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       'script',
       {
         src: '//unpkg.com/valine/dist/Valine.min.js',
+      }
+    ],
+    // 代码高亮样式
+    ['link', { rel: 'stylesheet', href: '/codeStyle/styles/default.min.css' }],
+    [
+      'script',
+      {
+        src: '/codeStyle/highlight.min.js',
       }
     ],
 
@@ -274,7 +279,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
             appId: '8sJ6G7Cx71Y6wk8uc4Oa8gPO-MdYXbMMI',
             appKey: '8YrCdIYhCyYl24kayTnsl18U',
             // 评论框占位内容
-            placeholder: "给读者打个招呼，Ciallo～(∠・ω< )⌒★",
+            placeholder: "评论支持 markdown 语法",
             // 评论者头像
             avatar: "mp",
             // 是否启用昵称框自动获取QQ昵称和QQ头像
