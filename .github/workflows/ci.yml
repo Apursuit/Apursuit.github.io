@@ -21,12 +21,12 @@ jobs:
 
     steps:
       - name: 1. Checkout # 1. 检出仓库
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@4
         with:
             fetch-depth: 0
             
       - name: 2. Set up Node.js Environment # 2. 设置 Node.js 环境
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           
