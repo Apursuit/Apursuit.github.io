@@ -39,13 +39,13 @@ cardList 后面可跟随一个数字表示每行最多显示多少个，选值�
 ```
 :::
 
-## wow！贞德湿泥鸭
+## hey
 
 ::: cardList 2
 ```yaml
 - name: hankarry
   desc: 寄吧咸鱼一个，看什么看！有什么看的！再看我就能憋出代码了？
-  avatar: https://www.hankarry.fun/upload/4f756146-69cb-436f-97b2-8f1c67a14de2.png
+  avatar: /medias/friends/karry.png
   link: https://www.hankarry.fun/
   bgColor: '#f5f5f5'
   textColor: '#363636'
@@ -62,6 +62,13 @@ cardList 后面可跟随一个数字表示每行最多显示多少个，选值�
   desc: 新的理想型社区
   avatar: /medias/friends/linuxdo.png
   link: https://linux.do/
+  bgColor: '#f5f5f5'
+  textColor: '#363636'
+
+- name: Maze-sec
+  desc: 相见恨晚
+  avatar: /medias/friends/mazesec.png
+  link: https://maze-sec.com/
   bgColor: '#f5f5f5'
   textColor: '#363636'
 ```
