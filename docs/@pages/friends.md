@@ -72,5 +72,13 @@ cardList 后面可跟随一个数字表示每行最多显示多少个，选值�
   bgColor: '#f5f5f5'
   textColor: '#363636'
 
+
+- name: HYH
+  desc: 想念的终究会相遇吧
+  avatar: /medias/friends/hyh.webp
+  link: https://www.hyhforever.top/
+  bgColor: '#f5f5f5'
+  textColor: '#363636'
+
 ```
 :::

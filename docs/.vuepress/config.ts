@@ -170,6 +170,12 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         src: '/codeStyle/highlight.min.js',
       }
     ],
+    [
+      'script',
+      {
+        src: '/sitejs/new-friends-page.js',
+      }
+    ],
     ['script', {}, 'hljs.highlightAll();'],
 
     // 引入新字体
