@@ -22,6 +22,14 @@ cardList 后面可跟随一个数字表示每行最多显示多少个，选值�
   bgColor: '#f5f5f5'
   textColor: '#363636'
 
+- name: ll104567
+  desc: 认识的人越多，我就越喜欢狗。
+  avatar: /medias/friends/ll104567.png
+  link: https://space.bilibili.com/20805349
+  bgColor: '#f5f5f5'
+  textColor: '#363636'
+
+
 - name: linuxdo
   desc: 新的理想型社区
   avatar: /medias/friends/linuxdo.png
@@ -40,13 +48,6 @@ cardList 后面可跟随一个数字表示每行最多显示多少个，选值�
   desc: 当你的才华不足以满足你的野心时，应该静下心来努力学习。
   avatar: /medias/friends/triumphk.webp
   link: https://7r1umphk.github.io/
-  bgColor: '#f5f5f5'
-  textColor: '#363636'
-
-- name: ll104567
-  desc: 认识的人越多，我就越喜欢狗。
-  avatar: /medias/friends/ll104567.png
-  link: https://space.bilibili.com/20805349
   bgColor: '#f5f5f5'
   textColor: '#363636'
 
