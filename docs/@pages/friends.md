@@ -25,7 +25,7 @@ cardList 后面可跟随一个数字表示每行最多显示多少个，选值�
 
 - name: ll104567
   desc: 认识的人越多，我就越喜欢狗。
-  avatar: /medias/friends/ll104567.png
+  avatar: /medias/friends/ll104567.webp
   link: https://space.bilibili.com/20805349
   bgColor: '#f5f5f5'
   textColor: '#363636'
@@ -91,7 +91,7 @@ cardList 后面可跟随一个数字表示每行最多显示多少个，选值�
 
   
 - name: Sunset's Blog
-  desc: 
+  desc: Records of life and study at sunset.
   avatar: /medias/friends/sunset.png
   link: https://www.sunsetaction.top/
   bgColor: '#f5f5f5'
