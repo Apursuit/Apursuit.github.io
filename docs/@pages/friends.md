@@ -81,5 +81,19 @@ cardList 后面可跟随一个数字表示每行最多显示多少个，选值�
   bgColor: '#f5f5f5'
   textColor: '#363636'
 
+- name: Aristore
+  desc: 你好，很高兴认识你👋
+  avatar: /medias/friends/Aristore.png
+  link: https://www.aristore.top/
+  bgColor: '#f5f5f5'
+  textColor: '#363636'
+
+  
+- name: Sunset's Blog
+  desc: 
+  avatar: /medias/friends/sunset.png
+  link: https://www.sunsetaction.top/
+  bgColor: '#f5f5f5'
+  textColor: '#363636'
 ```
 :::
