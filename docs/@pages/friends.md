@@ -94,5 +94,12 @@ cardList 后面可跟随一个数字表示每行最多显示多少个，选值�
   link: https://www.sunsetaction.top/
   bgColor: '#f5f5f5'
   textColor: '#363636'
+
+- name: Mnzn の 小屋
+  desc: 萌新
+  avatar: /medias/friends/mnzn.png
+  link: https://mnzn.me/
+  bgColor: '#f5f5f5'
+  textColor: '#363636'
 ```
 :::
