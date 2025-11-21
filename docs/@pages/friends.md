@@ -52,6 +52,20 @@ cardList 后面可跟随一个数字表示每行最多显示多少个，选值�
   bgColor: '#f5f5f5'
   textColor: '#363636'
 
+- name: HYH
+  desc: 想念的终究会相遇吧
+  avatar: /medias/friends/hyh.webp
+  link: https://www.hyhforever.top/
+  bgColor: '#f5f5f5'
+  textColor: '#363636'
+
+- name: Aristore
+  desc: 你好，很高兴认识你👋
+  avatar: /medias/friends/Aristore.png
+  link: https://www.aristore.top/
+  bgColor: '#f5f5f5'
+  textColor: '#363636'
+
 
 - name: hankarry
   desc: 寄吧咸鱼一个，看什么看！有什么看的！再看我就能憋出代码了？
@@ -73,22 +87,6 @@ cardList 后面可跟随一个数字表示每行最多显示多少个，选值�
   link: https://amqyy.cn/
   bgColor: '#f5f5f5'
   textColor: '#363636'
-
-
-- name: HYH
-  desc: 想念的终究会相遇吧
-  avatar: /medias/friends/hyh.webp
-  link: https://www.hyhforever.top/
-  bgColor: '#f5f5f5'
-  textColor: '#363636'
-
-- name: Aristore
-  desc: 你好，很高兴认识你👋
-  avatar: /medias/friends/Aristore.png
-  link: https://www.aristore.top/
-  bgColor: '#f5f5f5'
-  textColor: '#363636'
-
   
 - name: Sunset's Blog
   desc: Records of life and study at sunset.
