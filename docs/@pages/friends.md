@@ -53,7 +53,7 @@ cardList 后面可跟随一个数字表示每行最多显示多少个，选值�
   textColor: '#363636'
 
 - name: MJ
-  desc: 
+  desc: 嫉妒能让你前进，但也能让你陷入深渊。
   avatar: /medias/friends/mj.png
   link: https://faabbi.github.io/
   bgColor: '#f5f5f5'
