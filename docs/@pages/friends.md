@@ -52,6 +52,13 @@ cardList 后面可跟随一个数字表示每行最多显示多少个，选值�
   bgColor: '#f5f5f5'
   textColor: '#363636'
 
+- name: MJ
+  desc: 
+  avatar: /medias/friends/mj.png
+  link: https://faabbi.github.io/
+  bgColor: '#f5f5f5'
+  textColor: '#363636'
+
 - name: HYH
   desc: 想念的终究会相遇吧
   avatar: /medias/friends/hyh.webp
@@ -66,6 +73,12 @@ cardList 后面可跟随一个数字表示每行最多显示多少个，选值�
   bgColor: '#f5f5f5'
   textColor: '#363636'
 
+- name: Sunset's Blog
+  desc: Records of life and study at sunset.
+  avatar: /medias/friends/sunset.png
+  link: https://www.sunsetaction.top/
+  bgColor: '#f5f5f5'
+  textColor: '#363636'
 
 - name: hankarry
   desc: 寄吧咸鱼一个，看什么看！有什么看的！再看我就能憋出代码了？
@@ -85,20 +98,6 @@ cardList 后面可跟随一个数字表示每行最多显示多少个，选值�
   desc: 想玩电脑awa
   avatar: /medias/friends/qyx.png
   link: https://amqyy.cn/
-  bgColor: '#f5f5f5'
-  textColor: '#363636'
-  
-- name: Sunset's Blog
-  desc: Records of life and study at sunset.
-  avatar: /medias/friends/sunset.png
-  link: https://www.sunsetaction.top/
-  bgColor: '#f5f5f5'
-  textColor: '#363636'
-
-- name: Mnzn の 小屋
-  desc: 萌新
-  avatar: /medias/friends/mnzn.png
-  link: https://mnzn.me/
   bgColor: '#f5f5f5'
   textColor: '#363636'
 ```
