@@ -1,171 +1,156 @@
-ul li a 
-  font-size: 16px;
-  line-height: 1.8;
-  display: block;
-  padding: 8px 0;
+// ============================================
+// 1. 深色模式适配 (针对 Valine)
+// ============================================
+// 覆盖 Valine 评论区文字颜色
+body.theme-mode-dark #valine-vue .v .vlist .vcard .vcontent,
+body.theme-mode-dark #valine-vue .v .vlist .vcard .vcontent p
+  color: #e0e0e0 !important
 
-ul li a .date
-  font-size: 16px !important;
+// 评论者昵称颜色
+body.theme-mode-dark #valine-vue .v .vlist .vcard .vhead .vnick
+  color: #ffffff !important
 
-// 隐藏logo
+// 时间和元数据颜色
+body.theme-mode-dark #valine-vue .v .vlist .vcard .vhead .vtime
+  color: #aaaaaa !important
+
+// 输入框文字颜色
+body.theme-mode-dark #valine-vue .v .vwrap .vedit .vctrl,
+body.theme-mode-dark #valine-vue .v .vwrap .vheader .vinput
+  color: #e0e0e0 !important
+
+// 输入框 Placeholder 颜色
+body.theme-mode-dark #valine-vue ::placeholder
+  color: #777 !important
+
+// ============================================
+// 2. 全局样式微调
+// ============================================
+
+// 修正：限制列表链接样式仅作用于文章内容，避免破坏侧边栏
+.theme-vdoing-content ul li a 
+  font-size: 16px
+  line-height: 1.8
+  display: inline-block // 改为 inline-block 比较安全
+  padding: 2px 0        // 减小 padding 避免排版太散
+
+// 隐藏元素
 img.logo
   display: none !important
-
-// 隐藏Github
 a.repo-link
   display: none !important
-
-// 隐藏作者
 span.iconfont.icon-touxiang
+  display: none
+.banner-conent
   display: none
 
 // 归档时间右浮动
 span.date
   float: right
 
-// 添加字体
+// 字体设置
+// 修正：移除 color: #000，防止深色模式文字消失
 body
   font-family: "Times New Roman", "Noto Serif CJK SC", "Songti SC", "Microsoft YaHei", serif, -apple-system, BlinkMacSystemFont
   line-height: 1.6
   font-size: 16px
-  color: #000
+  // color: #000  <-- 已注释，使用默认变量
 
 h1, h2, h3, h4, h5, h6
   font-family: "Times New Roman", "Noto Serif CJK SC", "Songti SC", "Microsoft YaHei", serif, -apple-system, BlinkMacSystemFont
 
+// ============================================
+// 3. 图片样式
+// ============================================
 .excerpt-wrapper p img
-  display: block;
-  margin: 0 auto;
+  display: block
+  margin: 0 auto
 
-// p标签img居中
+// 修正：图片宽度限制增加移动端判断
 .content-wrapper p img
-  max-width: 70%!important;
-  height: auto; 
-  display: block;
-  margin: 0 auto;
+  max-width: 70% !important
+  height: auto 
+  display: block
+  margin: 0 auto
+  border-radius: 8px
+  // 移动端恢复 100% 宽度，否则图片太小看不清
+  @media (max-width: 719px)
+    max-width: 100% !important
 
-// 版心块添加圆角属性
+// 圆角设置
 .theme-vdoing-wrapper
   border-radius: 10px !important
 
-// 自定义提示块添加圆角属性
 .custom-block
   border-radius: 6px
 
-// 文章图片添加圆角属性
-p img
-  border-radius: 8px
+// Banner 高度强制调整
+.banner
+  min-height: 0px !important
 
-// 修改p标签字体大小
 p
   font-size: 18px
 
-// banner改写
-.banner
-  min-height:0px !important
+// ============================================
+// 4. Valine 评论区布局优化
+// ============================================
+// 修正：使用 Flex 布局代替硬编码的 width 31%，兼容手机
+#valine-vue .vheader .vinput
+  border: 2px solid #dedede
+  border-radius: 5px
+  padding-left: 10px
+  padding-right: 10px
+  
+// 针对 PC 端的布局微调
+@media (min-width: 720px)
+  #valine-vue .vheader
+    display: flex
+    justify-content: space-between
+    gap: 10px // 使用 gap 控制间距
+  
+  #valine-vue .vheader .vnick,
+  #valine-vue .vheader .vmail,
+  #valine-vue .vheader .vlink
+    width: 32%
+    margin-left: 0 !important // 清除可能存在的 margin
 
-// banner content隐藏
-.banner-conent
-  display: none
-
-
-
-// 评论区样式
-#vcomments .vheader .vnick 
-  width: 31%;
-  border: 2px solid #dedede;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 5px;
-
-
-#vcomments .vheader .vmail 
-  width: 31%;
-  border: 2px solid #dedede;
-  margin-left: 34px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 5px;
-
-
-#vcomments .vheader .vlink 
-  width: 31%;
-  border: 2px solid #dedede;
-  margin-left: 34px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 5px;
-
-
-
-// 评论区颜色重置
-.gt-container
-  .gt-ico-tip
-    &::after
-      content: '。( Win + . ) 或 ( ⌃ + ⌘ + ␣ ) 打开表情'
-      color: #999
-      font-size: .8rem
-  .gt-meta
-    border-color var(--borderColor)!important
-  .gt-comments-null
-    color var(--textColor)
-    opacity .5
-  .gt-header-textarea
-    color var(--textColor)
-    background rgba(180,180,180,0.1)!important
-  .gt-btn
-    border-color $accentColor!important
-    background-color $accentColor!important
-  .gt-btn-preview
-    background-color rgba(255,255,255,0)!important
-    color $accentColor!important
-  a
-    color $accentColor!important
-  .gt-svg svg
-    fill $accentColor!important
-  .gt-comment-content,.gt-comment-admin .gt-comment-content
-    background-color rgba(150,150,150,0.1)!important
-    &:hover
-      box-shadow 0 0 25px rgba(150,150,150,.5)!important
-    .gt-comment-body
-      color var(--textColor)!important
-
-
-// qq徽章
+// ============================================
+// 5. 其他插件样式
+// ============================================
+// QQ 徽章
 .qq
-  position: relative;
-.qq::after
-  content: "可撩";
-  background: $accentColor;
-  color:#fff;
-  padding: 0 5px;
-  border-radius: 10px;
-  font-size:12px;
-  position: absolute;
-  top: -4px;
-  right: -35px;
-  transform:scale(0.85);
+  position: relative
+  &::after
+    content: "可撩"
+    background: $accentColor
+    color: #fff
+    padding: 0 5px
+    border-radius: 10px
+    font-size: 12px
+    position: absolute
+    top: -4px
+    right: -35px
+    transform: scale(0.85)
 
-// demo模块图标颜色
+// Demo 模块图标
 body .vuepress-plugin-demo-block__wrapper
   &,.vuepress-plugin-demo-block__display
     border-color rgba(160,160,160,.3)
   .vuepress-plugin-demo-block__footer:hover
     .vuepress-plugin-demo-block__expand::before
-      border-top-color: $accentColor !important;
-      border-bottom-color: $accentColor !important;
+      border-top-color: $accentColor !important
+      border-bottom-color: $accentColor !important
     svg
-      fill: $accentColor !important;
+      fill: $accentColor !important
 
 // 全文搜索框
 .suggestions
   overflow: auto
   max-height: calc(100vh - 6rem)
-  @media (max-width: 719px) {
-    width: 90vw;
-    min-width: 90vw!important;
-    margin-right: -20px;
-  }
+  @media (max-width: 719px)
+    width: 90vw
+    min-width: 90vw !important
+    margin-right: -20px
   .highlight
     color: $accentColor
     font-weight: bold
