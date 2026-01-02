@@ -65,13 +65,14 @@ cardList 后面可跟随一个数字表示每行最多显示多少个，选值�
   link: https://xiaozhihua.top/
   bgColor: '#f5f5f5'
   textColor: '#363636'
-
+  
 - name: Skyarrow
   desc: 没有术力口和邦邦的生活是不可想象的
   avatar: /medias/friends/kaada.jpg
   link: https://skyarrow416.github.io/
   bgColor: '#f5f5f5'
   textColor: '#363636'
+
 
 - name: HYH
   desc: 想念的终究会相遇吧
