@@ -154,3 +154,34 @@ body .vuepress-plugin-demo-block__wrapper
   .highlight
     color: $accentColor
     font-weight: bold
+
+// ============================================
+// 6. 视频样式（新增）
+// ============================================
+
+// 基础视频样式 - 与图片保持一致
+.content-wrapper video,
+.excerpt-wrapper video {
+  max-width: 70% !important;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+  // 移动端适配
+  @media (max-width: 719px) {
+    max-width: 100% !important;
+    border-radius: 6px;
+    margin: 1rem auto;
+  }
+}
+
+// 深色模式适配
+body.theme-mode-dark {
+  .content-wrapper video,
+  .excerpt-wrapper video {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+}
