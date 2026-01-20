@@ -10,6 +10,7 @@ const toolsData = {
         { name: 'Localsend', desc: '跨平台文件传输工具', link: 'https://localsend.org/zh-CN/download', linkText: '官网' },
         { name: 'VMware', desc: '虚拟机', link: 'https://github.com/201853910/VMwareWorkstation', linkText: 'GitHub直链下载' },
         { name: 'VirtualBox', desc: '虚拟机', link: 'https://www.virtualbox.org/', linkText: '官网' },
+        { name: 'Tabby', desc: '跨平台终端模拟器', link: 'https://tabby.sh/', linkText: '官网' },
         { name: 'Dawn Launcher', desc: 'Windows 快捷启动工具', link: 'https://dawnlauncher.com/', linkText: '官网' },
         { name: 'ServBay', desc: '开发环境快速配置', link: 'https://www.servbay.com/zh-CN', linkText: '官网' },
         { name: 'Geek Uninstall', desc: '程序卸载', link: 'https://geekuninstaller.com/download', linkText: '下载' },
@@ -41,9 +42,11 @@ const toolsData = {
 
     ],
     'pentest-tools': [
+        { name: 'Stream++', desc: '游戏/学术加速器', link: 'https://steampp.net/', linkText: '官网' },
+        { name: 'gh-proxy', desc: 'GitHub 代理加速', link: 'https://gh-proxy.com/', linkText: '官网' },
         { name: 'Static Binaries', desc: '静态二进制文件集合85 stars', link: 'https://github.com/pkgforge-dev/Static-Binaries', linkText: 'GitHub' },
         { name: 'Static Binaries', desc: '静态二进制文件集合 3.6k stars', link: 'https://github.com/andrew-d/static-binaries', linkText: 'GitHub' },
-        { name: 'Burp Suite 2024.10', desc: 'Web 抓包/测试工具', link: 'https://www.52pojie.cn/thread-1544866-1-1.html', linkText: '52pojie' },
+        { name: 'BurpSuite v2026.1汉化无cmd框版', desc: 'Web 抓包/测试工具', link: 'https://www.52pojie.cn/thread-2005151-1-1.html', linkText: '52pojie' },
         { name: 'Yakit', desc: '抓包漏洞扫描', link: 'https://www.yaklang.com/', linkText: '官网' }, 
         { name: 'Kali Linux', desc: '渗透测试系统', link: 'https://www.kali.org/get-kali/#kali-platforms', linkText: '官网' },
         { name: 'PEASS-ng', desc: '权限提升工具', link: 'https://github.com/peass-ng/PEASS-ng', linkText: 'GitHub' },
