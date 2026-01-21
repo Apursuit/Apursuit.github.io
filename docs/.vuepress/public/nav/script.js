@@ -55,6 +55,8 @@ const toolsData = {
         { name: 'CobaltStrike', desc: 'C2', link: 'https://get-shell.com/1554.html', linkText: 'Get-shell'},
         { name: 'hackbar', desc: '发包扩展', link: 'https://chromewebstore.google.com/detail/ginpbkfigcoaokgflihfhhmglmbchinc?utm_source=item-share-cb', linkText: 'Chrome' }, 
         { name: 'dirsearch', desc: '目录扫描器', link: 'https://github.com/maurosoria/dirsearch', linkText: 'GitHub' },
+        { name: 'git-dumper', desc: 'Git 仓库泄露扫描工具', link: 'https://github.com/arthaud/git-dumper', linkText: 'GitHub' },
+        { name: 'dumpall', desc: '信息收集工具', link: 'https://github.com/0xHJK/dumpall', linkText: 'GitHub' },
         { name: 'sqlmap', desc: '自动化 SQL 注入', link: 'https://github.com/sqlmapproject/sqlmap', linkText: 'GitHub' },
         { name: 'CN_Sqlmap', desc: 'sqlmap 汉化', link: 'https://github.com/BugFor-Pings/CN_Sqlmap', linkText: 'GitHub' },
         { name: 'TscanPlus', desc: '无影(TscanPlus)', link: 'https://github.com/TideSec/TscanPlus', linkText: 'GitHub' }, 
