@@ -1,9 +1,10 @@
 const toolsData = {
     'installation-tools': [
-        // { name: '', desc: '', link: '', linkText: '' },
         { name: 'Google Chrome', desc: '浏览器', link: 'https://www.google.com/chrome/', linkText: '官网' },
         { name: 'Firefox', desc: '浏览器', link: 'https://www.firefox.com/', linkText: '官网' },
         { name: 'Watt Toolkit', desc: 'Github加速', link: 'https://steampp.net/', linkText: '官网' },
+        { name: 'Linux Mirrors', desc: 'Linux 换源加速', link: 'https://github.com/SuperManito/LinuxMirrors', linkText: 'GitHub' },
+        { name: 'gh-proxy', desc: 'GitHub 代理加速', link: 'https://gh-proxy.com/', linkText: '官网' },
         { name: 'PowerToys', desc: '微软官方 Windows 增强工具集', link: 'https://github.com/microsoft/PowerToys', linkText: 'GitHub' },
         { name: 'Clash for Linux Install', desc: 'clash for linux安装脚本', link: 'https://github.com/nelvko/clash-for-linux-install', linkText: 'GitHub' },
         { name: 'Flclash', desc: '代理工具', link: 'https://github.com/chen08209/FlClash', linkText: 'GitHub' },
