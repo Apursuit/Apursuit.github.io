@@ -236,3 +236,49 @@ body.theme-mode-dark
   .content-wrapper video,
   .excerpt-wrapper video
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3)
+
+// ============================================
+// 7. Valine 评论区 Markdown / 代码块 深色适配（新增）
+// ============================================
+
+// 只改评论区，避免影响正文代码块
+body.theme-mode-dark #valine-vuepress-comment
+  // 行内 code
+  code
+    background: rgba(255,255,255,0.08)
+    color: #e6e6e6
+    padding: 0.15em 0.35em
+    border-radius: 4px
+
+  // 代码块容器
+  pre
+    background: rgba(255,255,255,0.06) !important
+    border: 1px solid rgba(255,255,255,0.12)
+    border-radius: 8px
+    padding: 12px 14px
+    overflow: auto
+
+  // 代码块内 code（覆盖可能的亮色背景）
+  pre code
+    background: transparent !important
+    color: #e6e6e6 !important
+    padding: 0
+    border-radius: 0
+
+  // highlight.js 可能会给 .hljs 自己上亮底，这里强制压掉
+  .hljs
+    background: transparent !important
+    color: #e6e6e6 !important
+
+  // 如果你的 Valine 代码块里有 <span style="..."> 或 hljs 的 token，通常不需要全改颜色，
+  // 但如果你遇到 token 颜色太暗/不清晰，可以再补几类常见 token：
+  .hljs-comment
+    color: rgba(230,230,230,0.55) !important
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-literal
+    color: #9ecbff !important
+  .hljs-string
+    color: #b8e994 !important
+  .hljs-number
+    color: #f5cd79 !important
