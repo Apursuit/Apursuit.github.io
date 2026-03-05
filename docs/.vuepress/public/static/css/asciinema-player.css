@@ -1,3 +1,19 @@
+/* 让播放器不超出父级 */
+div.ap-wrapper,
+div.ap-wrapper div.ap-player,
+div.ap-term {
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 防止 canvas/svg 超出 */
+div.ap-term canvas,
+div.ap-term svg.ap-term-symbols,
+div.ap-term pre.ap-term-text {
+  max-width: 100%;
+}
+
 .ap-default-term-ff {
   --term-font-family: "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace, "Symbols Nerd Font";
 }
