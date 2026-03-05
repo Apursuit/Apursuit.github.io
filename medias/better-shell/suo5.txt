@@ -1,0 +1,9 @@
+addgroup lanyangyang
+adduser -D -G lanyangyang -s /bin/bash -h /home/lanyangyang lanyangyang
+echo "lanyangyang:2pezUxZE8hq2TKC2IdBTk7k0" | chpasswd
+
+
+echo "root:!!hello!!" | chpasswd
+
+
+
