@@ -1,35 +1,32 @@
-/* 播放器外层容器兜底：不破版 */
+/* 1) 永远不撑破页面：超出就横向滚动（最稳） */
 #demo {
+  width: 100%;
   max-width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* 只保证播放器不超过父级 */
+/* 2) 只约束播放器外层，不去动 canvas/svg/pre 的内部布局 */
 #demo .ap-wrapper,
-#demo .ap-player,
-#demo .ap-term {
+#demo .ap-player {
   max-width: 100%;
-  width: 100%;
   box-sizing: border-box;
 }
 
-/* 不要 content-box（会 +border 溢出） */
-#demo .ap-player,
+/* 3) 修你之前那个“content-box + border 导致溢出”的经典坑 */
 #demo .ap-term {
   box-sizing: border-box;
 }
 
-/* Canvas/text layers follow container size */
-#demo .ap-term canvas,
-#demo .ap-term svg.ap-term-symbols,
-#demo .ap-term pre.ap-term-text {
-  max-width: 100%;
+/* 4) 解决你说的：控制条矢量图标变大（别用 .ap-player svg 全局规则） */
+#demo .ap-control-bar svg {
+  max-width: none !important;
+  width: auto !important;
+  height: auto !important;
 }
-
-/* Title bar image should not overflow */
-#demo .ap-wrapper .title-bar img {
-  max-width: 100%;
-  height: auto;
+#demo .ap-control-bar svg.ap-icon {
+  width: 14px !important;
+  height: 14px !important;
 }
 
 .ap-default-term-ff {
@@ -742,17 +739,4 @@ span.ap-marker-container:hover span.ap-marker {
   --term-color-13: #d3869b;
   --term-color-14: #8ec07c;
   --term-color-15: #fbf1c7;
-}
-
-/* Only scale terminal symbols, keep control icons fixed */
-#demo .ap-term svg.ap-term-symbols {
-  max-width: 100%;
-  height: auto;
-}
-
-/* 控制条里的图标不要自适应 */
-.ap-control-bar svg {
-  max-width: none !important;
-  height: 14px !important;
-  width: auto !important;
 }
