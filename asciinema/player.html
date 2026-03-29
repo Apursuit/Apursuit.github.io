@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Asciinema 播放器</title>
+    <link rel="stylesheet" href="asciinema-player.css">
+    <style>
+        body { margin: 0; background: transparent; }
+    </style>
+</head>
+<body>
+    <div id="player"></div>
+    
+    <script src="asciinema-player.min.js"></script>
+    <script>
+        // 获取 URL 参数
+        function getCastFile() {
+            const urlParams = new URLSearchParams(window.location.search);
+            // 如果存在 src 参数，使用它；否则使用默认的 demo.cast
+            return urlParams.get('src') || 'demo.cast';
+        }
+
+        // 获取播放参数
+        function getPlaybackParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return {
+                autoPlay: urlParams.get('autoplay') === '1',
+                loop: urlParams.get('loop') === '1',
+                speed: parseFloat(urlParams.get('speed') || '1.0'),
+            };
+        }
+
+        // 创建播放器
+        const castFile = getCastFile();
+        const options = getPlaybackParams();
+
+        const player = AsciinemaPlayer.create(
+            castFile,
+            document.getElementById('player'),
+            options
+        );
+    </script>
+</body>
+</html>

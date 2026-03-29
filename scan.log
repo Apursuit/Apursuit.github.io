@@ -1,0 +1,41 @@
+[2026-03-29 20:38:28] --- IndexNow URL 变更追踪与提交脚本启动 ---
+[2026-03-29 20:38:28] 尝试从线上 URL 获取历史状态: https://the0n3.top/indexed_urls_state.txt
+[2026-03-29 20:38:28] ✅ 成功获取上一次的 URL 状态文件。
+[2026-03-29 20:38:28] 已加载 193 条历史路径。
+[2026-03-29 20:38:28] 开始扫描构建目录: docs/.vuepress/dist
+[2026-03-29 20:38:28] 扫描完成，找到 193 个 HTML 文件路径。
+[2026-03-29 20:38:28] 
+--- 执行 IndexNow 提交 ---
+[2026-03-29 20:38:28] 准备提交 10 条新增/修改的 URL 到 IndexNow。
+[2026-03-29 20:38:29] ✅ URL 列表成功提交到 IndexNow。
+[2026-03-29 20:38:29] 成功更新本地状态文件 docs/.vuepress/dist/indexed_urls_state.txt，共写入 193 条路径。
+[2026-03-29 20:38:29] 
+--- URL 变更分析报告 ---
+[2026-03-29 20:38:29] 当前找到的 HTML 文件总数: 193
+[2026-03-29 20:38:29] 上次追踪的文件总数 (从线上获取): 193
+[2026-03-29 20:38:29] 
+[本次提交 IndexNow 路径]:
+[2026-03-29 20:38:29] 提交: pages/maze-111/index.html
+[2026-03-29 20:38:29] 提交: pages/maze-112/index.html
+[2026-03-29 20:38:29] 提交: pages/maze-113/index.html
+[2026-03-29 20:38:29] 提交: pages/maze-115final/index.html
+[2026-03-29 20:38:29] 提交: pages/maze-disk/index.html
+[2026-03-29 20:38:29] 提交: pages/maze-fromytoy/index.html
+[2026-03-29 20:38:29] 提交: pages/maze-link/index.html
+[2026-03-29 20:38:29] 提交: pages/maze-meltdown/index.html
+[2026-03-29 20:38:29] 提交: pages/maze-scanner/index.html
+[2026-03-29 20:38:29] 提交: pages/maze-worm/index.html
+[2026-03-29 20:38:29] 
+[已删除路径]:
+[2026-03-29 20:38:29] 已删除: pages/Scanner/index.html
+[2026-03-29 20:38:29] 已删除: pages/link/index.html
+[2026-03-29 20:38:29] 已删除: pages/maze-sec-111/index.html
+[2026-03-29 20:38:29] 已删除: pages/maze-sec-112/index.html
+[2026-03-29 20:38:29] 已删除: pages/maze-sec-113/index.html
+[2026-03-29 20:38:29] 已删除: pages/maze-sec-meltdown/index.html
+[2026-03-29 20:38:29] 已删除: pages/maze-sec-worm/index.html
+[2026-03-29 20:38:29] 已删除: pages/mazes-disk/index.html
+[2026-03-29 20:38:29] 已删除: pages/mazesec-115final/index.html
+[2026-03-29 20:38:29] 已删除: pages/mazesec-fromytoy/index.html
+[2026-03-29 20:38:29] --- 脚本运行结束 ---
+
